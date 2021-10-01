@@ -3,8 +3,11 @@
 ## About
 
 Lecturer: /Ex10si0n
+
 Location: TBA
+
 Time Schedule: TBA
+
 Semester: 1
 
 ## Covered Topic Abstract
