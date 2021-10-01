@@ -24,7 +24,7 @@ POJ: http://poj.org/problemlist  ![](https://img.shields.io/badge/Web-OJ-blue)
 
 ## Covered Topic Abstract
 
-Graph Theroy, Searching, Misc.
+Fundamental, Graph Theroy, Searching, Dynamic Programming, Misc.
 
 ## How to use this repository?
 
@@ -42,10 +42,100 @@ This lecture will specifically focus on the Algorithms implementation. My exampl
 
 No slides are distributed (cuz. I do not regard slides as effecient format to display codes) but all of the codes and explanations are showed on this `README.md`.
 
-Following topics will be covered in the Interest Group
+**Following topics will be covered in the Interest Group**
 
-```mermaid
-graph TD;
-	Fundamental --> Tree
+* Fundamental Algorithms
+  * `Greedy (贪心)`
+  * `Binary Search (二分)`
+  * `Recursion (递归)`
+
+# Chapter 1. Fundamental Algorithms
+
+## Greedy
+
+Greedy Algorithms can be adopted when a specific problem can be proofed that when locally optimal choice in each stages can produce a globally optimal choice. But in many problems, all stages is optimized does not means that it will be globally optimized.
+
+### [LC11](https://leetcode.com/problems/container-with-most-water/) Container With Most Water
+
+Given `n` non-negative integers `a1, a2, ..., an` , where each represents a point at coordinate `(i, ai)`. `n` vertical lines are drawn such that the two endpoints of the line `i` is at `(i, ai)`and `(i, 0)`. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.
+
+**Notice** that you may not slant the container.
+
+**Example 1:**
+
+![img](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg)
 
 ```
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+```
+
+**Example 2:**
+
+```
+Input: height = [1,1]
+Output: 1
+```
+
+**Example 3:**
+
+```
+Input: height = [4,3,2,1,4]
+Output: 16
+```
+
+**Example 4:**
+
+```
+Input: height = [1,2,1]
+Output: 2
+```
+
+**Constraints:**
+
+- `n == height.length`
+- `2 <= n <= 105`
+- `0 <= height[i] <= 104`
+
+#### Sol.
+
+![Picture0.png](https://pic.leetcode-cn.com/1628780627-VtSmcP-Picture0.png)
+
+* If in Brute Force way, we can encount `n * n` possibilities then calculate each area to get the max area.
+* Greedy Approach can optimize the complexity from `O(n^2)` to `O(n)`
+  * Let `i` be the first line and `j` be the last line.
+  * For each pair of lines selected, the covered area size is `A(i, j) = min(height_i, height_j) * (j - i)`.
+  * If we move the longer line inner, `min(height_i', height_j') <= min(height_i, height_j)`
+  * If we move the shorter line inner, `min(height_i', height_j') > or <= min(height_i, height_j)`
+  * If the area will be larger, the contribution of updating lines will be positive.
+  * Hence, we can only encount only `n - 1` times then we can get the largest area.
+  * Ref. https://leetcode-cn.com/problems/container-with-most-water/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do/
+
+### [LC55](https://leetcode.com/problems/jump-game/) Jump Game
+
+You are given an integer array `nums`. You are initially positioned at the array's **first index**, and each element in the array represents your maximum jump length at that position.
+
+Return `true` *if you can reach the last index, or* `false` *otherwise*.
+
+**Example 1:**
+
+```
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+```
+
+**Example 2:**
+
+```
+Input: nums = [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+```
+
+**Constraints:**
+
+- `1 <= nums.length <= 104`
+- `0 <= nums[i] <= 105`
+
