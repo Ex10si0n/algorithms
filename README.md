@@ -12,15 +12,15 @@ Semester: 1
 
 ## Useful URLs
 
- ![](https://img.shields.io/badge/Web-.md-red)Typora: https://typora.io
+Typora: https://typora.io  ![](https://img.shields.io/badge/Web-.md-red)
 
- ![](https://img.shields.io/badge/Web-Python-green)Google Colab: https://colab.research.google.com
+Google Colab: https://colab.research.google.com  ![](https://img.shields.io/badge/Web-Python-green)
 
- ![](https://img.shields.io/badge/Web-OJ-blue)LeetCode: https://leetcode.com/problemset/all/
+LeetCode: https://leetcode.com/problemset/all/  ![](https://img.shields.io/badge/Web-OJ-blue)
 
- ![](https://img.shields.io/badge/Web-OJ-blue)POJ: http://poj.org/problemlist
+POJ: http://poj.org/problemlist  ![](https://img.shields.io/badge/Web-OJ-blue)
 
- ![](https://img.shields.io/badge/Web-Wiki-blue)OIWiki: https://oi-wiki.org
+ OIWiki: https://oi-wiki.org ![](https://img.shields.io/badge/Web-Wiki-blue)
 
 ## Covered Topic Abstract
 
