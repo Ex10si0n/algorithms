@@ -44,10 +44,30 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 
 **Following topics will be covered in the Interest Group**
 
-* Fundamental Algorithms
-  * `Greedy (贪心)`
-  * `Binary Search (二分)`
-  * `Recursion (递归)`
+* Fundamental
+  * `Greedy (贪心)` ![](https://img.shields.io/badge/-basic-red)
+  * `Binary Search (二分)` ![](https://img.shields.io/badge/-basic-red)
+  * `Recursion (递归)` ![](https://img.shields.io/badge/-basic-red)
+  * `Data Structure (数据结构) ` ![](https://img.shields.io/badge/-basic-red)
+    * Linear Structure
+      * `Queue (队列)`
+      * `Stack (栈)`
+    * Generic Tree
+      * `Tree (树)`
+      * `Binary Tree (二叉树)` 
+      * `Linear Structure (maintained by Tree) (由树维护的线性结构)`
+    * Generic Graph
+      * `Graph (图)`
+      * `Directed Graph (有向图)`
+      * `Bipartite Graph (二分图)`
+* Graph Theory  (图论)
+  * `Minimal Spanning Tree (最小生成树)`
+  * `Shortest Path (最短路径)`
+    * `Floyed-Warshall`
+    * `Dijkstra`
+    * `SPFA`
+  * `Network Flow (网络流)`
+    * `Ford-Fulkerson (最大流算法)`
 
 # Chapter 1. Fundamental Algorithms
 
