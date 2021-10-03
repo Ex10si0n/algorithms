@@ -110,6 +110,9 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
   * If the area will be larger, the contribution of updating lines will be positive.
   * Hence, we can only encount only `n - 1` times then we can get the largest area.
   * Ref. https://leetcode-cn.com/problems/container-with-most-water/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do/
+  * Status Transferring Tree
+
+![](./assets/LC11.State_Tree.jpeg)
 
 ```python
 class Solution:
