@@ -91,27 +91,6 @@ Output: 49
 Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
 ```
 
-**Example 2:**
-
-```
-Input: height = [1,1]
-Output: 1
-```
-
-**Example 3:**
-
-```
-Input: height = [4,3,2,1,4]
-Output: 16
-```
-
-**Example 4:**
-
-```
-Input: height = [1,2,1]
-Output: 2
-```
-
 **Constraints:**
 
 - `n == height.length`
@@ -131,6 +110,22 @@ Output: 2
   * If the area will be larger, the contribution of updating lines will be positive.
   * Hence, we can only encount only `n - 1` times then we can get the largest area.
   * Ref. https://leetcode-cn.com/problems/container-with-most-water/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do/
+
+```python
+class Solution:
+    def maxArea(self, height):
+        i = 0
+        j = len(height) - 1
+        ans = 0
+        while i < j:
+            if height[i] < height[j]:
+                ans = max(ans, height[i] * (j - i))
+                i += 1
+            else:
+                ans = max(ans, height[j] * (j - i))
+                j -= 1
+        return ans
+```
 
 ### [LC55](https://leetcode.com/problems/jump-game/) Jump Game
 
