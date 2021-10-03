@@ -271,3 +271,5 @@ After removing the rocks that distance from starting point are 2 and 14, the res
 | 30%     | $10 \le M \le 100$     | $10 \le M \le 100$     | $1 \le L \le 1,000,000,000$ |
 | 50%     | $100 \le M \le 50,000$ | $100 \le M \le 50,000$ | $1 \le L \le 1,000,000,000$ |
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
