@@ -20,7 +20,7 @@ LeetCode: https://leetcode.com/problemset/all/  ![](https://img.shields.io/badge
 
 POJ: http://poj.org/problemlist  ![](https://img.shields.io/badge/Web-OJ-blue)
 
- OIWiki: https://oi-wiki.org ![](https://img.shields.io/badge/Web-Wiki-blue)
+OIWiki: https://oi-wiki.org ![](https://img.shields.io/badge/Web-Wiki-blue)
 
 ## Covered Topic Abstract
 
@@ -36,6 +36,11 @@ git clone https://github.com/Ex10si0n/MPI-Interest-Group.git
 
 You can open `README.md` (Markdown File: open via [Typora](https://typora.io) or notepad.exe) locally or on [this](https://github.com/Ex10si0n/MPI-Interest-Group) page.
 
+## Assessment
+
+* Attandance
+* Assignments
+
 ## About this lecture
 
 This lecture will specifically focus on the Algorithms implementation. My example code will be demostrated in Python, but you can adopt any kind of programming language if you prefer.
@@ -44,7 +49,7 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 
 **Following topics will be covered in the Interest Group**
 
-* Fundamental
+* Fundamental Methodologies
   * `Greedy (贪心)` ![](https://img.shields.io/badge/-basic-red)
   * `Binary Search (二分)` ![](https://img.shields.io/badge/-basic-red)
   * `Recursion (递归)` ![](https://img.shields.io/badge/-basic-red)
@@ -102,7 +107,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 ![Picture0.png](https://pic.leetcode-cn.com/1628780627-VtSmcP-Picture0.png)
 
 * If in Brute Force way, we can encount `n * n` possibilities then calculate each area to get the max area.
-* Greedy Approach can optimize the complexity from `O(n^2)` to `O(n)`
+* Greedy Approach can optimize the complexity from $O(N^2)$ to $O(N)$
   * Let `i` be the first line and `j` be the last line.
   * For each pair of lines selected, the covered area size is `A(i, j) = min(height_i, height_j) * (j - i)`.
   * If we move the longer line inner, `min(height_i', height_j') <= min(height_i, height_j)`
@@ -188,4 +193,32 @@ class Solution:
                 max += prices[i] - prices[i - 1]
         return max
 ```
+
+## Binary Search
+
+Binary Search is an efficient algorithm for finding an item from a **sorted** set of items. Here is an example for finding `-1` from the given list.
+
+![](http://michaelsyao.com/assets/images/binary-search-2.png)
+
+As the figure shows, adopting binary search can lower the time complexity from $O(N)$ to $O(\log N)$ [Note: When analysising Algorithms time and space complexity, $\log N$ stands for $log_2 N$]
+
+The code pattern of binary search algorithms are easy to understand, we often use `l`, `r`, `mid` to point with the left and right pointer. `mid` is always calculated with the formular `l + r // 2`.
+
+```python
+# Assume that bigger answer is better
+l = 0, r = N, mid
+
+while l < r:
+	mid = (l + r) // 2
+    if canSolve(mid):
+        l = mid
+    else:
+        r = mid
+
+answer = mid
+```
+
+By extension, when solving a problem, we can also adopt binary search for searching the solution from a sorted list of possible solution. Here is an example, make your hands dirty.
+
+![](./assets/NOIP15_SD2T1.png)
 
