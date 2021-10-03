@@ -220,5 +220,54 @@ answer = mid
 
 By extension, when solving a problem, we can also adopt binary search for searching the solution from a sorted list of possible solution. Here is an example, make your hands dirty.
 
-![](./assets/NOIP15_SD2T1.png)
+## [P2678](https://www.luogu.com.cn/problem/P2678) Stones (NOIP15 Day2 Q1)
+
+## 
+
+For a better understanding, you can read the problem in [CN Version](./assets/NOIP15_SD2T1.png).
+
+The annual "stone jumping" competition is about to start again! The competition will be held in a straight river with huge rocks distributed in the river. The committee has selected two rocks as the starting and ending points of the competition. Between the start point and the end point, there are **N** pieces of rocks (the rocks that do not include the start point and the end point). During the competition, the players will start from the starting point and jump to the adjacent rocks at each step until they reach the finish line.
+
+In order to increase the difficulty of the competition, the committee plans to remove some rocks to make the shortest jumping distance of the contestants as long as possible during the competition. Due to budget constraints, the committee can remove at most M rocks between the start and end points (the start and end rocks cannot be removed).
+
+You should write a program to read **L, N, M** that represent the distance between starting point and ending point(**L**), the number of rocks between starting point and ending point(**N**), number of rocks the committe can remove at most(**M**). The data constraint is `L >= 1, N >= M >= 0`
+
+For the following **N** lines, the i-th line has $D_i$, which represents the distance between the i-th rock and the starting point. The data constraint is `(i < j) Di < Dj, Di != Dj`
+
+And your program should print an integer which is the maximum distance of minimum jumpping interval.
+
+**Sample I/O**
+
+Input Data:
+
+```
+25 5 2
+2
+11
+14
+17
+21
+```
+
+Output Data:
+
+```
+4
+```
+
+Explanation:
+
+After removing the rocks that distance from starting point are 2 and 14, the rest rocks are 11, 17, 21. The solution is optimal. You can try other methods to see the result.
+
+```
+[Start]--- 11 ---[Rock(11)]-- 6 --[Rock(17)]- 4 -[End(21)]
+```
+
+**Data Scaling**
+
+| Portion | M                      | N                      | L                           |
+| ------- | ---------------------- | ---------------------- | --------------------------- |
+| 20%     | $0 \le M \le 10$       | $0 \le M \le 10$       | $1 \le L \le 1,000,000,000$ |
+| 30%     | $10 \le M \le 100$     | $10 \le M \le 100$     | $1 \le L \le 1,000,000,000$ |
+| 50%     | $100 \le M \le 50,000$ | $100 \le M \le 50,000$ | $1 \le L \le 1,000,000,000$ |
 
