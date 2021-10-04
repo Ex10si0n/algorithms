@@ -303,7 +303,7 @@ def main(input_data):
     N = input_data_list[1]                               #
     M = input_data_list[2]                               #
     D = input_data_list[3:]                              #
-	sol = Solution()                                     #
+    sol = Solution()                                     #
     
     ans = None
     
