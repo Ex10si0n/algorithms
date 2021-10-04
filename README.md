@@ -106,7 +106,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 ![Picture0.png](https://pic.leetcode-cn.com/1628780627-VtSmcP-Picture0.png)
 
-* If in Brute Force way, we can encount `n * n` possibilities then calculate each area to get the max area.
+* If in Brute Force (暴力枚举) way, we can encount `n * n` possibilities then calculate each area to get the max area.
 * Greedy Approach can optimize the complexity from $O(N^2)$ to $O(N)$
   * Let `i` be the first line and `j` be the last line.
   * For each pair of lines selected, the covered area size is `A(i, j) = min(height_i, height_j) * (j - i)`.
@@ -186,7 +186,7 @@ Consider two days
 
 ```python
 class Solution:
-	def maxProfit(self, prices):
+    def maxProfit(self, prices):
         max = 0
         for i in range(1, len(prices)):
             if prices[i] > prices[i - 1]:
@@ -268,4 +268,10 @@ After removing the rocks that distance from starting point are 2 and 14, the res
 | 20%     | 0 ≤ M ≤ 10       | 0 ≤ M ≤ 10       | 1 ≤ L ≤ 1,000,000,000 |
 | 30%     | 10 ≤ M ≤ 100     | 10 ≤ M ≤ 100     | 1 ≤ L ≤ 1,000,000,000 |
 | 50%     | 100 ≤ M ≤ 50,000 | 100 ≤ M ≤ 50,000 | 1 ≤ L ≤ 1,000,000,000 |
+
+#### Sol.
+
+* **Brute Force**: We can select any groups of **M** stones to be removed. And record the maximum interval of the minimal jump.
+* **Linear Search**: For the maximum interval of the minimal jump, actually we can adopt the **greedy methodology**. To try the answer(**ans**) from **L** to **1**. If two adjacent rocks has interval shorter than **ans**, then remove the next rock. If the attemption time less than **M**. It is just the optimal solution.
+* **Binary Search**: It is obvious that the answer of the question is allocated between **1** and **L**. For all possibilities we can use binary search to reduce the complexity from $O(N)$ to $O(\log N)$. Try to write the code to adopt the **binary search methodology** similar to the [given code](#Binary Search).
 
