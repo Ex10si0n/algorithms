@@ -210,7 +210,7 @@ l = 0, r = N, mid
 
 while l < r:
 	mid = (l + r) // 2
-    if canSolve(mid):
+    if can_solve(mid):
         l = mid
     else:
         r = mid
@@ -269,9 +269,103 @@ After removing the rocks that distance from starting point are 2 and 14, the res
 | 30%     | 10 ≤ M ≤ 100     | 10 ≤ M ≤ 100     | 1 ≤ L ≤ 1,000,000,000 |
 | 50%     | 100 ≤ M ≤ 50,000 | 100 ≤ M ≤ 50,000 | 1 ≤ L ≤ 1,000,000,000 |
 
+#### Test your code
+
+> **Mention**: You will see this **Test your code** Section when the problem is not available to test online, you may insert your codes on the template source code to implement algorithms in order to make the tester run dependablely.
+>
+> **How to test**: 
+>
+> 	1. set `RUN_TEST = True`
+>  	2. copy the code file into directory `testing/`
+>  	3. run the code with command `python <file_name>.py`
+>  	4. Then the testing code will automatically start and result will be given
+
+**P2678 Template** (Do not change lines indicated by `#`, your code can be inserted into the `main()` or `Solution class`)
+
+```python
+class Solution:												#
+    '''
+    Implement your algorithms here.
+    '''
+    pass
+
+RUN_TEST = False
+input_data = '''25 5 2
+                2
+                11
+                14
+                17
+                21'''
+
+def main(input_data):
+    input_data_list = list(map(int, input_data.split()))	#
+    L = input_data_list[0]									#
+    N = input_data_list[1]									# 
+    M = input_data_list[2]									#
+    D = input_data_list[3:]									#
+	sol = Solution()										#
+    
+    ans = None
+    
+    if not RUN_TEST: print(ans)								#
+    return ans												#
+
+# Do not Change The following code
+if __name__ == "__main__":
+    from time import time
+    from math import floor
+    if not RUN_TEST: main(input_data)
+    else:
+        earning = 0
+        testcases = 10
+        for i in range(1, 1 + testcases):
+            start = time()
+            _in = open('./test_data/stone/stone%d.in' % i, 'r')
+            key = open('./test_data/stone/stone%d.ans' % i, 'r')
+            input_data = _in.read()
+            ans = main(input_data)
+            end = time()
+            delta = floor((end - start) * 1000)
+            if delta > 1000: print('Time Exceeded Limit.')
+            elif ans - int(key.read()) == 0: 
+                print('Test Point %d Accepted in %d ms.' % (i, delta))
+                earning += 1
+            else: print('Test Point %d Wrong Answer.' % i)
+            _in.close(); key.close()
+        print('Point (%d/%d)' % (earning, testcases))
+```
+
 #### Sol.
 
 * **Brute Force**: We can select any groups of **M** stones to be removed. And record the maximum interval of the minimal jump.
 * **Linear Search**: For the maximum interval of the minimal jump, actually we can adopt the **greedy methodology**. To try the answer(**ans**) from **L** to **1**. If two adjacent rocks has interval shorter than **ans**, then remove the next rock. If the attemption time less than **M**. It is just the optimal solution.
 * **Binary Search**: It is obvious that the answer of the question is allocated between **1** and **L**. For all possibilities we can use binary search to reduce the complexity from $O(N)$ to $O(\log N)$. Try to write the code to adopt the **binary search methodology** similar to the [given code](#Binary Search).
+
+**Core Code**
+
+```python
+class Solution:
+
+    def can_solve(self, M, D, mid):
+        remove = 0; _next = 0; now = 0; N = len(D)
+        while _next < N - 1:
+            _next += 1
+            if D[_next] - D[now] < mid: remove += 1
+            else: now = _next
+        if remove > M: return False
+        else: return True
+
+    def binary_search(self, L, M, N, D):
+        l = 0
+        r = L
+        ans = mid = 0
+        while l <= r:
+            mid = (l + r) // 2
+            if self.can_solve(M, D, mid):
+                ans = mid
+                l = mid + 1
+            else:
+                r = mid - 1
+        return ans
+```
 
