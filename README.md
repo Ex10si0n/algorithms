@@ -222,8 +222,6 @@ By extension, when solving a problem, we can also adopt binary search for search
 
 ## [P2678](https://www.luogu.com.cn/problem/P2678) Stones (NOIP15 Day2 Q1)
 
-## 
-
 For a better understanding, you can read the problem in [CN Version](./assets/NOIP15_SD2T1.png).
 
 The annual "stone jumping" competition is about to start again! The competition will be held in a straight river with huge rocks distributed in the river. The committee has selected two rocks as the starting and ending points of the competition. Between the start point and the end point, there are **N** pieces of rocks (the rocks that do not include the start point and the end point). During the competition, the players will start from the starting point and jump to the adjacent rocks at each step until they reach the finish line.
