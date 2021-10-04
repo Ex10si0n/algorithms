@@ -276,14 +276,14 @@ After removing the rocks that distance from starting point are 2 and 14, the res
 > **How to test**: 
 >
 > 	1. set `RUN_TEST = True`
->  	2. copy the code file into directory `testing/`
->  	3. run the code with command `python <file_name>.py`
->  	4. Then the testing code will automatically start and result will be given
+> 	2. copy the code file into directory `testing/`
+> 	3. run the code with command `python <file_name>.py`
+> 	4. Then the testing code will automatically start and result will be given
 
 **P2678 Template** (Do not change lines indicated by `#`, your code can be inserted into the `main()` or `Solution class`)
 
 ```python
-class Solution:												#
+class Solution:                                          #
     '''
     Implement your algorithms here.
     '''
@@ -298,17 +298,17 @@ input_data = '''25 5 2
                 21'''
 
 def main(input_data):
-    input_data_list = list(map(int, input_data.split()))	#
-    L = input_data_list[0]									#
-    N = input_data_list[1]									# 
-    M = input_data_list[2]									#
-    D = input_data_list[3:]									#
-	sol = Solution()										#
+    input_data_list = list(map(int, input_data.split())) #
+    L = input_data_list[0]                               #
+    N = input_data_list[1]                               #
+    M = input_data_list[2]                               #
+    D = input_data_list[3:]                              #
+	sol = Solution()                                     #
     
     ans = None
     
-    if not RUN_TEST: print(ans)								#
-    return ans												#
+    if not RUN_TEST: print(ans)                          #
+    return ans                                           #
 
 # Do not Change The following code
 if __name__ == "__main__":
