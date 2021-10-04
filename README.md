@@ -50,8 +50,8 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 **Following topics will be covered in the Interest Group**
 
 * Fundamental Methodologies
-  * `Greedy (贪心)` ![](https://img.shields.io/badge/-Done-red)
-  * `Binary Search (二分)` ![](https://img.shields.io/badge/-Done-red)
+  * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy) ![](https://img.shields.io/badge/-Done-red)
+  * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search) ![](https://img.shields.io/badge/-Done-red)
   * `Recursion (递归)`
   * `Data Structure (数据结构) `
     * Linear Structure
