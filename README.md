@@ -50,10 +50,10 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 **Following topics will be covered in the Interest Group**
 
 * Fundamental Methodologies
-  * `Greedy (贪心)` ![](https://img.shields.io/badge/-basic-red)
-  * `Binary Search (二分)` ![](https://img.shields.io/badge/-basic-red)
-  * `Recursion (递归)` ![](https://img.shields.io/badge/-basic-red)
-  * `Data Structure (数据结构) ` ![](https://img.shields.io/badge/-basic-red)
+  * `Greedy (贪心)` ![](https://img.shields.io/badge/-Done-red)
+  * `Binary Search (二分)` ![](https://img.shields.io/badge/-Done-red)
+  * `Recursion (递归)` ![](https://img.shields.io/badge/-Done-red)
+  * `Data Structure (数据结构) ` ![](https://img.shields.io/badge/-Done-red)
     * Linear Structure
       * `Queue (队列)`
       * `Stack (栈)`
