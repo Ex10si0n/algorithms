@@ -53,8 +53,8 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
   * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy) ![](https://img.shields.io/badge/-Done-red)
   * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search) ![](https://img.shields.io/badge/-Done-red)
   * [`Recursion (递归)`](https://github.com/Ex10si0n/MPI-Interest-Group#recursion) ![](https://img.shields.io/badge/-Done-red)
-  * `Data Structure (数据结构) `
-    * Linear Structure
+  * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure)
+    * [Linear Structure](https://github.com/Ex10si0n/MPI-Interest-Group#linear-structure)
       * `Queue (队列)`
       * `Stack (栈)`
     * Generic Tree
@@ -424,4 +424,79 @@ def fibonacci(int n):
 ```
 
 The logic here is to keep the values already computed in variables **last** and **nextToLast** in every iteration of the **for** loop so that every Fibonacci number is computed exactly once. In this case, every single value is computed only once no matter how big **n** is.
+
+## Data Structure
+
+### Linear Structure
+
+#### Queue
+
+A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO). A good example of a queue is any queue of consumers for a resource where the consumer that came first is served first.
+
+![Types of Queue in Data structure | Queue Data structure Introduction and  Operations](https://i1.faceprep.in/Companies-1/queue-operations.gif)
+
+**Code to implement**
+
+```python
+class Queue:
+    def __init__(self):
+        self.queue = []
+    
+    def push(self, elm):
+        self.queue.append(elm)
+    
+    def pop(self):
+        val = self.queue[0]
+        del self.queue[0]
+        return val
+```
+
+#### Stack
+
+Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+
+![Stack Data Structure and Implementation in Python, Java and C/C++](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
+
+**Code to implement**
+
+```python
+class Stack:
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, elm):
+        self.stack.append(elm)
+    
+    def pop(self):
+        val = self.stack.pop()
+        return val
+```
+
+### Generic Tree
+
+#### Tree
+
+![TREES - Learn with Data Structures](http://www.tutorialspoint.com/data_structures_algorithms/images/binary_tree.jpg)
+
+**Code to implement**
+
+```python
+
+```
+
+#### Binary Tree
+
+
+
+#### Linear Structure Maintained by Tree
+
+##### Binary Search Tree
+
+
+
+##### Segement Tree
+
+
+
+### Generic Graph
 
