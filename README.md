@@ -62,7 +62,6 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
     * Generic Graph
       * `Graph (图)`
       * `Directed Graph (有向图)`
-      * `Bipartite Graph (二分图)`
 * Graph Theory  (图论)
   * `Minimal Spanning Tree (最小生成树)`
   * `Shortest Path (最短路径)`
@@ -71,6 +70,7 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
     * `SPFA`
   * `Network Flow (网络流)`
     * `Ford-Fulkerson (最大流算法)`
+  * `Bipartite Graph (二分图)`
 
 # Chapter 1. Fundamental Algorithms
 
@@ -579,4 +579,36 @@ An array representation of tree is used to represent Segment Trees. For each nod
 ![](./assets/segment-tree.jpeg)
 
 ### Generic Graph
+
+In this section, I will only introduce the data structure of generic graph and the implementation. The more complex version of graph is in the following chapter.
+
+#### Adjacency Matrix
+
+Let's back to this straightforward staff: The **adjacency matrix** to describing or saving a graph in the memory. If node A and node B is interconnected, then `adj[A][B] = adj[B][A] = edge_value`(Where `edge_value (边权值)` is the **cost** of travelling through each edges). If it is a directed graph, `A -> B` means there is a path from A to B but not from B to A, then `adj[A][B] = edge_value`. The space complexity is $O(N^2)$. That means if the graph has 1,000,000 nodes, an 1,000,000 x 1,000,000 matrix will take in use. Although the size is horrible, it is the most easy understanding way of describing a graph, here is the example and code implementation.
+
+![](https://upload.wikimedia.org/wikipedia/commons/4/49/Adjacency_matrix_for_graph.png)
+
+**Code to initialize**
+
+```python
+nodes = ['A', 'B', 'C', 'D', 'E', 'F']
+n = len(nodes)
+
+# pure python
+adj = []
+for i in range(n):
+    adj.append([0] * n)
+               
+# numpy
+import numpy
+adj = numpy.zeros([n, n])
+```
+
+**Exercise**: Build an adjacency matrix of non-directed graph in last figure and print the matrix
+
+#### Adjacency List
+
+An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an `G[]`. An entry `G[i]` represents the list of vertices adjacent to the i-th vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is the adjacency list representation.
+
+![](https://www.oreilly.com/library/view/learning-javascript-data/9781788623872/assets/268857bd-bb32-4fa5-88c9-66d7787952e9.png)
 
