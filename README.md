@@ -53,14 +53,16 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
   * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy) ![](https://img.shields.io/badge/-Done-red)
   * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search) ![](https://img.shields.io/badge/-Done-red)
   * [`Recursion (递归)`](https://github.com/Ex10si0n/MPI-Interest-Group#recursion) ![](https://img.shields.io/badge/-Done-red)
-  * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure)
-    * [Linear Structure](https://github.com/Ex10si0n/MPI-Interest-Group#linear-structure)
-      * `Queue (队列)`
-      * `Stack (栈)`
+  * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure) ![](https://img.shields.io/badge/-Done-red)
+    * Linear Structure
+      * [`Queue (队列)`](https://github.com/Ex10si0n/MPI-Interest-Group#queue)
+      * [`Stack (栈)`](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
     * Generic Tree
-      * `Tree (树)`
-      * `Binary Tree (二叉树)` 
+      * [`Tree (树)`](https://github.com/Ex10si0n/MPI-Interest-Group#tree)
+      * [`Binary Tree (二叉树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)
       * `Linear Structure (maintained by Tree) (由树维护的线性结构)`
+        * [`Binary Indexed Tree (二叉索引树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree)
+        * [`Segment Tree (线段树)`](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
     * Generic Graph
       * `Graph (图)`
       * `Directed Graph (有向图)`
@@ -474,25 +476,92 @@ class Stack:
 
 ### Generic Tree
 
+It is a **hierarchical** structure as elements in a Tree are arranged in multiple levels. In the Tree data structure, the topmost node is known as a root node. Each node contains some data, and data can be of any type.
+
 #### Tree
+
+Terms:
 
 ![TREES - Learn with Data Structures](http://www.tutorialspoint.com/data_structures_algorithms/images/binary_tree.jpg)
 
 **Code to implement**
 
 ```python
+class Node:
+    def __init__(self, val, children=None):
+        self.val = val
+        self.children = children
+```
 
+**Traversal**
+
+```python
+def preorder(root):
+    if root:
+        print(root.val)
+        for child in root.children:
+            preorder(child)
+
+def postorder(root):
+    if root:
+        for child in root.children:
+            postorder(child)
+        print(root.val)
 ```
 
 #### Binary Tree
 
+![Binary Tree - emre.me](https://cdn.emre.me/2019-07-26-binary-tree.png)
 
+**Code to implement**
+
+```python
+class Node:
+    def __init__(self, val, lch=None, rch=None):
+        self.val = val
+        self.lch = lch
+        self.rch = rch
+```
+
+**Traversal**
+
+```python
+def preorder(root):
+    if root:
+        print(root.val)
+        preorder(root.lch)
+        preorder(root.rch)
+
+def postorder(root):
+    if root:
+        postorder(root.lch)
+        postorder(root.rch)
+        print(root.val)
+```
 
 #### Linear Structure Maintained by Tree
 
-##### Binary Search Tree
+##### Binary Indexed Tree
 
+Let us consider the following problem to understand Binary Indexed Tree.
+We have an array `arr[0 ... n-1]`. We would like to
 
+1. Compute the sum of the first i elements. 
+2. Modify the value of a specified element of the array `arr[i] = x` where` 0 <= i <= n-1`.
+
+A **simple solution** is to run a loop from `0` to `i-1` and calculate the sum of the elements. To update a value, simply do `arr[i] = x`. The first operation takes $O(n)$ time and the second operation takes $O(1)$ time. Another simple solution is to create an extra array and store the sum of the first i-th elements at the i-th index in this new array. The sum of a given range can now be calculated in $O(1)$ time, but the update operation takes $O(n)$ time now. This works well if there are a large number of query operations but a very few number of update operations.
+
+**Could we perform both the query and update operations in $O(\log n)$ time?** 
+
+Take a look at this example.
+
+![](https://he-s3.s3.amazonaws.com/media/uploads/68f2369.jpg)
+
+Each Orange node maintains an interval sum of numbers. If we rotate it, we can have a better understanding.
+
+![](./assets/bit.png)
+
+For example, to get the interval sum(or any other data of an interval you defined) of `[0, 10]`.  just add 2 values rather than 11 values. Try to find which 2 values are components to sum up.
 
 ##### Segement Tree
 
