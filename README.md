@@ -22,10 +22,6 @@ POJ: http://poj.org/problemlist  ![](https://img.shields.io/badge/Web-OJ-blue)
 
 OIWiki: https://oi-wiki.org ![](https://img.shields.io/badge/Web-Wiki-blue)
 
-## Covered Topic Abstract
-
-Fundamental, Graph Theroy, Searching, Dynamic Programming, Misc.
-
 ## How to use this repository?
 
 Clone via HTTPS using following command or Click `Code` then `Download ZIP`.
@@ -36,12 +32,12 @@ git clone https://github.com/Ex10si0n/MPI-Interest-Group.git
 
 You can open `README.md` (Markdown File: open via [Typora](https://typora.io) or notepad.exe) locally or on [this](https://github.com/Ex10si0n/MPI-Interest-Group) page.
 
-## Assessment
+## Assessments
 
 * Attandance
 * Assignments
 
-## About this lecture
+## Outline
 
 This lecture will specifically focus on the Algorithms implementation. My example code will be demostrated in Python, but you can adopt any kind of programming language if you prefer.
 
@@ -563,9 +559,24 @@ Each Orange node maintains an interval sum of numbers. If we rotate it, we can h
 
 For example, to get the interval sum(or any other data of an interval you defined) of `[0, 10]`.  just add 2 values rather than 11 values. Try to find which 2 values are components to sum up.
 
-##### Segement Tree
+##### Segment Tree
 
+Let us consider the previous question in [Binary Indexed Tree](https://github.com/Ex10si0n/MPI-Interest-Group#linear-structure-maintained-by-tree)
 
+A **simple solution** is to run a loop from l to r and calculate the sum of elements in the given range. To update a value, simply do `arr[i] = x`. The first operation takes $O(n)$ time and the second operation takes $O(1)$ time. 
+
+**Another solution** is to create another array and store sum from start to i at the ith index in this array. The sum of a given range can now be calculated in $O(1)$ time, but update operation takes $O(n)$ time now. This works well if the number of query operations is large and very few updates.
+What if the number of query and updates are equal? **Can we perform both the operations in $O(\log N)$ time once given the array?** We can use a Segment Tree to do both operations in $O(\log N)$ time.
+
+**How it works?**
+
+1. Leaf Nodes are the elements of the input array. 
+
+2. Each internal node represents some merging of the leaf nodes. The merging may be different for different problems. For this problem, merging is sum of leaves under a node.
+
+An array representation of tree is used to represent Segment Trees. For each node at index i, the left child is at index `2 * i + 1`, right child at `2 * i + 2` and the parent is at `⌊(i – 1) / 2⌋`(Note: `⌊expression⌋`notation means flooring).
+
+![](./assets/segment-tree.jpeg)
 
 ### Generic Graph
 
