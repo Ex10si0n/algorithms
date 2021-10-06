@@ -45,24 +45,23 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 
 **Following topics will be covered in the Interest Group**
 
-* Fundamental Methodologies
+* **Fundamental Methodologies**
   * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy) ![](https://img.shields.io/badge/-Done-red)
   * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search) ![](https://img.shields.io/badge/-Done-red)
   * [`Recursion (递归)`](https://github.com/Ex10si0n/MPI-Interest-Group#recursion) ![](https://img.shields.io/badge/-Done-red)
   * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure) ![](https://img.shields.io/badge/-Done-red)
-    * Linear Structure
-      * [`Queue (队列)`](https://github.com/Ex10si0n/MPI-Interest-Group#queue)
-      * [`Stack (栈)`](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
-    * Generic Tree
-      * [`Tree (树)`](https://github.com/Ex10si0n/MPI-Interest-Group#tree)
-      * [`Binary Tree (二叉树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)
-      * `Linear Structure (maintained by Tree) (由树维护的线性结构)`
-        * [`Binary Indexed Tree (二叉索引树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree)
-        * [`Segment Tree (线段树)`](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
-    * Generic Graph
-      * `Graph (图)`
-      * `Directed Graph (有向图)`
-* Graph Theory  (图论)
+    * Linear Structure ![](https://img.shields.io/badge/-Done-red)
+      * [`Queue (队列)`](https://github.com/Ex10si0n/MPI-Interest-Group#queue) ![](https://img.shields.io/badge/-Done-red)
+      * [`Stack (栈) ![](https://img.shields.io/badge/-Done-red)`](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
+    * Generic Tree ![](https://img.shields.io/badge/-Done-red)
+      * [`Tree (树)`](https://github.com/Ex10si0n/MPI-Interest-Group#tree) ![](https://img.shields.io/badge/-Done-red)
+      * [`Binary Tree (二叉树) ![](https://img.shields.io/badge/-Done-red)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)
+      * `Linear Structure (maintained by Tree) (由树维护的线性结构)` ![](https://img.shields.io/badge/-Done-red)
+        * [`Binary Indexed Tree (二叉索引树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree) ![](https://img.shields.io/badge/-Done-red)
+        * [`Segment Tree (线段树)`](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree) ![](https://img.shields.io/badge/-Done-red)
+    * Generic Graph ![](https://img.shields.io/badge/-Done-red)
+      * [`Graph (图)`](https://github.com/Ex10si0n/MPI-Interest-Group#graph) ![](https://img.shields.io/badge/-Done-red)
+* **Graph Theory  (图论)**
   * `Minimal Spanning Tree (最小生成树)`
   * `Shortest Path (最短路径)`
     * `Floyed-Warshall`
@@ -71,6 +70,8 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
   * `Network Flow (网络流)`
     * `Ford-Fulkerson (最大流算法)`
   * `Bipartite Graph (二分图)`
+
+
 
 # Chapter 1. Fundamental Algorithms
 
