@@ -433,7 +433,7 @@ A Queue is a linear structure which follows a particular order in which the oper
 
 ![Types of Queue in Data structure | Queue Data structure Introduction and  Operations](https://i1.faceprep.in/Companies-1/queue-operations.gif)
 
-**Code to implement**
+**Code to implement** [[src code]](./data_structure/queue.py)
 
 ```python
 class Queue:
@@ -455,7 +455,7 @@ Stack is a linear data structure which follows a particular order in which the o
 
 ![Stack Data Structure and Implementation in Python, Java and C/C++](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
 
-**Code to implement**
+**Code to implement **[[src code]](./data_structure/stack.py)
 
 ```python
 class Stack:
@@ -480,7 +480,7 @@ Terms:
 
 ![TREES - Learn with Data Structures](http://www.tutorialspoint.com/data_structures_algorithms/images/binary_tree.jpg)
 
-**Code to implement**
+**Code to implement** [[src code]](./data_structure/tree.py)
 
 ```python
 class Node:
@@ -509,7 +509,7 @@ def postorder(root):
 
 ![Binary Tree - emre.me](https://cdn.emre.me/2019-07-26-binary-tree.png)
 
-**Code to implement**
+**Code to implement** [[src code]](./data_structure/binary_tree.py)
 
 ```python
 class Node:
@@ -610,5 +610,29 @@ adj = numpy.zeros([n, n])
 
 An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an `G[]`. An entry `G[i]` represents the list of vertices adjacent to the i-th vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is the adjacency list representation.
 
-![](https://www.oreilly.com/library/view/learning-javascript-data/9781788623872/assets/268857bd-bb32-4fa5-88c9-66d7787952e9.png)
+![](./assets/adjacency-list.jpeg)
+
+**Code to implement** [[src code]](./data_structure/adjacency_list.py)
+
+```python
+G = {}
+for i in range(10):    # The above graph has 10 edges
+    from_node, to_node = input().split(' ')
+    if from_node in G.keys(): G[from_node].append(to_node)
+    else: G[from_node] = [to_node]
+    if to_node in G.keys(): G[to_node].append(from_node)
+    else: G[to_node] = [from_node]
+        
+print(G)
+```
+
+```
+G = {'A': ['B', 'E', 'G'],
+     'B': ['A', 'G'],
+     'C': ['D', 'E', 'F'],
+     'D': ['C', 'G'],
+     'E': ['A', 'C', 'F'],
+     'F': ['C', 'E', 'G'],
+     'G': ['A', 'B', 'D', 'F']}
+```
 
