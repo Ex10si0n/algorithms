@@ -46,25 +46,26 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 **Following topics will be covered in the Interest Group**
 
 * **Fundamental Methodologies**
-  * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy) ![](https://img.shields.io/badge/-Done-red)
-  * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search) ![](https://img.shields.io/badge/-Done-red)
-  * [`Recursion (递归)`](https://github.com/Ex10si0n/MPI-Interest-Group#recursion) ![](https://img.shields.io/badge/-Done-red)
-  * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure) ![](https://img.shields.io/badge/-Done-red)
-    * Linear Structure ![](https://img.shields.io/badge/-Done-red)
-      * [`Queue (队列)`](https://github.com/Ex10si0n/MPI-Interest-Group#queue) ![](https://img.shields.io/badge/-Done-red)
-      * [`Stack (栈) ![](https://img.shields.io/badge/-Done-red)`](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
-    * Generic Tree ![](https://img.shields.io/badge/-Done-red)
-      * [`Tree (树)`](https://github.com/Ex10si0n/MPI-Interest-Group#tree) ![](https://img.shields.io/badge/-Done-red)
-      * [`Binary Tree (二叉树) `]((https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)) ![](https://img.shields.io/badge/-Done-red)
-      * `Linear Structure (maintained by Tree) (由树维护的线性结构)` ![](https://img.shields.io/badge/-Done-red)
-        * [`Binary Indexed Tree (二叉索引树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree) ![](https://img.shields.io/badge/-Done-red)
-        * [`Segment Tree (线段树)`](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree) ![](https://img.shields.io/badge/-Done-red)
-    * Generic Graph ![](https://img.shields.io/badge/-Done-red)
-      * [`Graph (图)`](https://github.com/Ex10si0n/MPI-Interest-Group#graph) ![](https://img.shields.io/badge/-Done-red)
+  * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy)
+  * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search)
+  * [`Recursion (递归)`](https://github.com/Ex10si0n/MPI-Interest-Group#recursion)
+  * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure)
+    * Linear Structure
+      * [`Queue (队列)`](https://github.com/Ex10si0n/MPI-Interest-Group#queue)
+      * [`Stack (栈)`](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
+    * Generic Tree
+      * [`Tree (树)`](https://github.com/Ex10si0n/MPI-Interest-Group#tree) 
+      * [`Binary Tree (二叉树) `]((https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)) 
+      * `Linear Structure (maintained by Tree) (由树维护的线性结构)`
+        * [`Binary Indexed Tree (二叉索引树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree)
+        * [`Segment Tree (线段树)`](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
+    * Generic Graph
+      * [`Graph (图)`](https://github.com/Ex10si0n/MPI-Interest-Group#graph)
 * **Graph Theory  (图论)**
   * [`Minimum Spanning Tree (最小生成树)`](https://github.com/Ex10si0n/MPI-Interest-Group#minimum-spanning-tree)
+  * [`Depth First Search (深度优先搜索)`](https://github.com/Ex10si0n/MPI-Interest-Group#depth-first-search)
   * `Shortest Path (最短路径)`
-    * `Floyed-Warshall`
+    * [`Floyed-Warshall`](https://github.com/Ex10si0n/MPI-Interest-Group#floyed-warshall)
     * `Dijkstra`
     * `SPFA`
   * `Network Flow (网络流)`
@@ -732,4 +733,23 @@ if __name__ == "__main__":
     mst = Prims(graph).prims()
     print(mst)
 ```
+
+## Depth First Search
+
+Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/MPI-Interest-Group#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
+
+```python
+def dfs(now_position):
+    visited.append(now_position)
+    if now_position == exit_positiion:
+    	return True
+    for dir in "←↓↑→":
+        next_position = now_position.step(dir)
+        if not next_position is "x" and next_position not in visited:
+            dfs(next_position)
+```
+
+## Shortest Path
+
+### Floyed Warshall
 
