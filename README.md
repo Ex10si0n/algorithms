@@ -1,4 +1,4 @@
-# sMPI Algorithms Interest Group
+# MPI Algorithms Interest Group
 
 # Introduction
 
@@ -46,31 +46,33 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 **Following topics will be covered in the Interest Group**
 
 * **Fundamental Methodologies**
-  * [`Greedy (贪心)`](https://github.com/Ex10si0n/MPI-Interest-Group#greedy)
-  * [`Binary Search (二分)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search)
-  * [`Recursion (递归)`](https://github.com/Ex10si0n/MPI-Interest-Group#recursion)
-  * [`Data Structure (数据结构) `](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure)
+  * [Greedy (贪心)](https://github.com/Ex10si0n/MPI-Interest-Group#greedy)
+  * [Binary Search (二分)](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search)
+  * [Recursion (递归)](https://github.com/Ex10si0n/MPI-Interest-Group#recursion)
+  * [Data Structure (数据结构) ](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure)
     * Linear Structure
-      * [`Queue (队列)`](https://github.com/Ex10si0n/MPI-Interest-Group#queue)
-      * [`Stack (栈)`](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
+      * [Queue (队列)](https://github.com/Ex10si0n/MPI-Interest-Group#queue)
+      * [Stack (栈)](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
     * Generic Tree
-      * [`Tree (树)`](https://github.com/Ex10si0n/MPI-Interest-Group#tree) 
-      * [`Binary Tree (二叉树) `]((https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)) 
-      * `Linear Structure (maintained by Tree) (由树维护的线性结构)`
-        * [`Binary Indexed Tree (二叉索引树)`](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree)
-        * [`Segment Tree (线段树)`](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
+      * [Tree (树)](https://github.com/Ex10si0n/MPI-Interest-Group#tree) 
+      * [Binary Tree (二叉树)]((https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)) 
+      * Linear Structure (maintained by Tree) (由树维护的线性结构)
+        * [Binary Indexed Tree (二叉索引树)](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree)
+        * [Segment Tree (线段树)](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
     * Generic Graph
-      * [`Graph (图)`](https://github.com/Ex10si0n/MPI-Interest-Group#graph)
+      * [Graph (图)](https://github.com/Ex10si0n/MPI-Interest-Group#graph)
 * **Graph Theory  (图论)**
-  * [`Minimum Spanning Tree (最小生成树)`](https://github.com/Ex10si0n/MPI-Interest-Group#minimum-spanning-tree)
-  * [`Depth First Search (深度优先搜索)`](https://github.com/Ex10si0n/MPI-Interest-Group#depth-first-search)
-  * `Shortest Path (最短路径)`
-    * [`Floyed-Warshall`](https://github.com/Ex10si0n/MPI-Interest-Group#floyed-warshall)
-    * `Dijkstra`
-    * `SPFA`
-  * `Network Flow (网络流)`
-    * `Ford-Fulkerson (最大流算法)`
-  * `Bipartite Graph (二分图)`
+  * [Minimum Spanning Tree (最小生成树)](https://github.com/Ex10si0n/MPI-Interest-Group#minimum-spanning-tree)
+  * Multiple Source Shortest Path - I (多源最短路径)
+    * [Floyed-Warshall](https://github.com/Ex10si0n/MPI-Interest-Group#floyed-warshall)
+  * [Breadth-first Search (广度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#breadth-first-search)
+  * Shortest Path - II (单源最短路径) 
+    * Dijkstra
+    * SPFA
+  * [Depth-first Search (深度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#depth-first-search)
+  * Network Flow (网络流)
+    * Ford-Fulkerson (最大流算法)
+  * Bipartite Graph (二分图)
 
 
 
@@ -601,16 +603,45 @@ adj = []
 for i in range(n):
     adj.append([0] * n)
                
-# numpy
+# equivalent form by numpy
 import numpy
 adj = numpy.zeros([n, n])
 ```
 
-**Exercise**: Build an adjacency matrix of non-directed graph in last figure and print the matrix
+**Exercise**: Build an adjacency matrix of non-directed graph in last figure then print the matrix and list all the edge in `A --- B` form.
+
+```
+# Insert your code below
+
+```
+
+**One of the solutions**
+
+```python
+edges = ['A B', 'B E', 'B C', 'E C', 'E D', 'C D', 'E F']
+_map = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5,\
+         5: 'F', 4: 'E', 3: 'D', 2: 'C', 1: 'B', 0: 'A'}
+
+adj = []
+n = len(edges)
+
+
+for i in range(n):
+    adj.append([0] * n)
+
+for e in edges:
+    from_node, to_node = e.split(' ')
+    adj[_map[from_node]][_map[to_node]] = adj[_map[to_node]][_map[from_node]] = 1
+
+for i in range(n):
+    for j in range(i, n):
+        if adj[i][j] == 1:
+            print(_map[i], '---', _map[j])
+```
 
 #### Adjacency List
 
-An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an `G[]`. An entry `G[i]` represents the list of vertices adjacent to the i-th vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is the adjacency list representation.
+An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an `G[]`. An entry `G[i]` represents the list of vertices adjacent to the i-th vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is the adjacency list representation. **It is not hard to change the adjacency matrix to list form if you really understand how it works.**
 
 ![](./assets/adjacency-list.jpeg)
 
@@ -639,8 +670,6 @@ G = {'A': ['B', 'E', 'G'],
 ```
 
 Up till now, you have read all of the contents of Chapter 1. I strongly advice you writing the code from the scratch to implement the basic data structure. In the following chapter, it's time to learn some tricky stuffs.
-
-
 
 # Chapter 2. Graph Theory
 
@@ -734,6 +763,35 @@ if __name__ == "__main__":
     print(mst)
 ```
 
+## Shortest Path I
+
+Here is the map of Ex10si0n island. He designed the arrangement of each town (namely A B C D E F G -town) with roads. When the tourist go through a certain path, he or she will pay for a number of coins. The cost of each road is the number inside each diamonds.
+
+You are paying a visit to Ex10si0n island. Can you find the minimum cost for travelling between arbitary two towns?
+
+You may notice that A town is marked in red. The red color have no meanings in current problem.
+
+![](./assets/map.jpeg)
+
+**Graph data**
+
+```python
+_map = {}
+for i in range(7): _map[i] = chr(i+65); _map[chr(i+65)] = i
+towns = [chr(i) for i in range(65, 65+7)]
+edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
+         'D G 1', 'E G 6', 'E F 2', 'A F 10', 'F D 9', 'F G 0']
+```
+
+### Floyed Warshall
+
+
+
+
+## Breadth First Search
+
+
+
 ## Depth First Search
 
 Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/MPI-Interest-Group#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
@@ -749,7 +807,4 @@ def dfs(now_position):
             dfs(next_position)
 ```
 
-## Shortest Path
-
-### Floyed Warshall
-
+## 
