@@ -1,4 +1,4 @@
-# MPI Algorithms Interest Group
+# sMPI Algorithms Interest Group
 
 # Introduction
 
