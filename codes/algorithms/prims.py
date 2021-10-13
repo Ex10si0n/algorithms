@@ -14,6 +14,15 @@ class Graph:
             else: G[to_node] = [(from_node, val)]
         return G
 
+    def adjacency_matrix(self):
+        adj = []
+        for i in range(len(self.vertices)): _map[i] = chr(i+97); _map[chr(i+97)] = i
+        for i in range(len(self.vertices)):
+            adj.append(self.vertices[0] * len(self.vertices))
+        for e in self.edges:
+            from_node, to_node, val = e.split(' ')
+            adj[from_node][to_node] = adj[to_node][from_node] = val
+
 
 class Prims:
 
