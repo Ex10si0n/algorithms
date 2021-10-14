@@ -41,7 +41,7 @@ class Search:
     def move(self, _from, towards):
         return [_from[0]+towards[0], _from[1]+towards[1]]
 
-    def generate_path(self):
+    def draw_path(self):
         for step in self.path:
             self.maze[step[0]][step[1]] = '*'
 
@@ -54,7 +54,7 @@ class Search:
     def solve(self):
         self.dfs(self.start, path=[])
         self.path = [self.path[i:i+2] for i in range(0, len(self.path), 2)]
-        self.generate_path()
+        self.draw_path()
         self.print_maze()
 
     def dfs(self, now_position, path):

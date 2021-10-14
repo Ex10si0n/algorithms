@@ -61,15 +61,17 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
         * [Segment Tree (线段树)](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
     * Generic Graph
       * [Graph (图)](https://github.com/Ex10si0n/MPI-Interest-Group#graph)
-* **Graph Theory  (图论)**
+* **Graph Theory (图论)**
+  
   * [Minimum Spanning Tree (最小生成树)](https://github.com/Ex10si0n/MPI-Interest-Group#minimum-spanning-tree)
+  * [Depth-first Search (深度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#depth-first-search)
   * Multiple Source Shortest Path - I (多源最短路径)
     * [Floyed-Warshall](https://github.com/Ex10si0n/MPI-Interest-Group#floyed-warshall)
   * [Breadth-first Search (广度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#breadth-first-search)
+  
   * Shortest Path - II (单源最短路径) 
     * Dijkstra
     * SPFA
-  * [Depth-first Search (深度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#depth-first-search)
   * Network Flow (网络流)
     * Ford-Fulkerson (最大流算法)
   * Bipartite Graph (二分图)
@@ -763,40 +765,12 @@ if __name__ == "__main__":
     print(mst)
 ```
 
-## Shortest Path I
-
-Here is the map of Ex10si0n island. He designed the arrangement of each town (namely A B C D E F G -town) with roads. When the tourist go through a certain path, he or she will pay for a number of coins. The cost of each road is the number inside each diamonds.
-
-You are paying a visit to Ex10si0n island. Can you find the minimum cost for travelling between arbitary two towns?
-
-You may notice that A town is marked in red. The red color have no meanings in current problem.
-
-![](./assets/map.jpeg)
-
-**Graph data**
-
-```python
-_map = {}
-for i in range(7): _map[i] = chr(i+65); _map[chr(i+65)] = i
-towns = [chr(i) for i in range(65, 65+7)]
-edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
-         'D G 1', 'E G 6', 'E F 2', 'A F 10', 'F D 9', 'F G 0']
-```
-
-### Floyed Warshall
-
-
-
-
-## Breadth First Search
-
-
-
 ## Depth First Search
 
 Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/MPI-Interest-Group#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
 
 Consider the maze is the following:
+
 ```
 ▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
 ▇. .▇. . . . . . . .▇. . . . . . . .▇. .▇.
@@ -821,15 +795,17 @@ Consider the maze is the following:
 ▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
 ```
 
-To let computer walk through the maze, we can adopt DFS in the problem solving program. Here is the pseudo code.
+To let computer program walk through the maze, we can adopt DFS in the problem solving program. Here is the pseudo code.
 
 ```python
 def dfs(now_position):
     visited.append(now_position)
     if now_position == exit_position:
     	return True
+    # Try to step on adjacent position
     for dir in "←↓↑→":
         next_position = now_position.step(dir)
+        # The case when next position can be stepped on
         if not next_position is "▇" and next_position not in visited:
             dfs(next_position)
 ```
@@ -875,6 +851,10 @@ if __name__ == '__main__':
 ```
 
 Using the above parser, the maze can be processed into an 2-D matrix (or array). you can access any `(x, y)` by invoking `maze[x][y]`.
+
+Please try to understand the psedo code first. Solution changes several codes due to specific problem solving. `path` list is recorded in each `dfs()` function's parameter list.
+
+> Why the `path` list should be recorded in the `dfs()` parameter list but not as instance variable?
 
 **Sol.** [[src code]](./codes/algorithms/dfs_maze.py)
 
@@ -922,7 +902,7 @@ class Search:
     def move(self, _from, towards):
         return [_from[0]+towards[0], _from[1]+towards[1]]
 
-    def generate_path(self):
+    def draw_path(self):
         for step in self.path:
             self.maze[step[0]][step[1]] = '*'
 
@@ -935,7 +915,7 @@ class Search:
     def solve(self):
         self.dfs(self.start, path=[])
         self.path = [self.path[i:i+2] for i in range(0, len(self.path), 2)]
-        self.generate_path()
+        self.draw_path()
         self.print_maze()
 
     def dfs(self, now_position, path):
@@ -957,4 +937,126 @@ if __name__ == '__main__':
     end = [19, 19]
     search = Search(maze, start, end)
 ```
+
+### LC200 Number of Islands
+
+Given an `m x n` 2D binary grid `grid` which represents a map of `'1'`s (land) and `'0'`s (water), return *the number of islands*.
+
+An **island** is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+ **Example 1:**
+
+```
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+```
+
+**Example 2:**
+
+```
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
+```
+
+**Constraints:**
+
+- `m == grid.length`
+- `n == grid[i].length`
+- `1 <= m, n <= 300`
+- `grid[i][j]` is `'0'` or `'1'`.
+
+#### Sol.
+
+```python
+class Solution:
+    
+    def dfs(self, grid, x, y):
+        move_dir = [[-1, 0], [0, 1], [0, -1], [1, 0]]
+        grid[x][y] = '0'
+        for _dir in move_dir:
+            next_x = x + _dir[0]
+            next_y = y + _dir[1]
+            if next_x >= 0 and next_y >= 0 and next_x < len(grid) and next_y < len(grid[0]):
+                if grid[next_x][next_y] == '1':
+                    self.dfs(grid, next_x, next_y)
+        
+    
+    def numIslands(self, grid: List[List[str]]) -> int:
+        res = 0
+        for x in range(len(grid)):
+            for y in range(len(grid[0])):
+                if grid[x][y] == '1':
+                    self.dfs(grid, x, y)
+                    res += 1
+        return res
+```
+
+## Shortest Path I
+
+Here is the map of Ex10si0n island. He designed the arrangement of each town (namely A B C D E F G -town) with roads. When the tourist go through a certain path, he or she will pay for a number of coins. The cost of each road is the number inside each diamonds.
+
+You are paying a visit to Ex10si0n island. Can you find the minimum cost for travelling between arbitary two towns?
+
+You may notice that A town is marked in red. The red color have no meanings in current problem.
+
+![](./assets/map.jpg)
+
+**Graph data**
+
+```python
+_map = {}
+for i in range(7): _map[i] = chr(i+65); _map[chr(i+65)] = i
+towns = [chr(i) for i in range(65, 65+7)]
+edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
+         'D G 1', 'E G 6', 'E F 2', 'A F 10', 'F D 9', 'F G 0']
+
+```
+
+### Floyed Warshall
+
+```python
+def add_edge(adj, edge):
+    f, r, v = edge.split(' ')
+    f = _map[f]; r = _map[r]; v = int(v)
+    adj[f][r] = adj[r][f] = v
+
+def floyed(adj):
+    n = len(adj)
+    dis = [[float('inf') for i in range(n)] for j in range(n)]
+    for i in range(n): dis[i][i] = 0
+    for bridge_node in range(n):
+        for from_node in range(n):
+            for to_node in range(n):
+                dis[from_node][to_node] = min(
+                    dis[from_node][to_node], 
+                    adj[from_node][to_node], 
+                    dis[from_node][bridge_node] + dis[bridge_node][to_node]
+                )
+    for i in dis:
+        print(i)
+
+if __name__ == '__main__':
+    towns = [chr(i) for i in range(65, 65+7)]; _map = {}
+    adj = [[float('inf') for i in range(len(towns))] for j in range(len(towns))]
+    edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
+         'D G 1', 'E G 6', 'E F 2', 'A F 10', 'F D 9', 'F G 0']
+    for i in range(7): _map[i] = chr(i+65); _map[chr(i+65)] = i
+    for edge in edges: add_edge(adj, edge)
+    floyed(adj)
+```
+
+
+## Breadth First Search
+
+
 
