@@ -826,11 +826,11 @@ To let computer walk through the maze, we can adopt DFS in the problem solving p
 ```python
 def dfs(now_position):
     visited.append(now_position)
-    if now_position == exit_positiion:
+    if now_position == exit_position:
     	return True
     for dir in "←↓↑→":
         next_position = now_position.step(dir)
-        if not next_position is "x" and next_position not in visited:
+        if not next_position is "▇" and next_position not in visited:
             dfs(next_position)
 ```
 
@@ -947,7 +947,7 @@ class Search:
             next_position = self.move(_from=now_position, towards=_dir)
             x = next_position[0]; y = next_position[1]
             if next_position not in self.visited and maze[x][y] != '▇':
-                find = self.dfs(next_position, path+now_position)
+                self.dfs(next_position, path+now_position)
         return False
 
 

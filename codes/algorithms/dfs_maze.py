@@ -66,7 +66,7 @@ class Search:
             next_position = self.move(_from=now_position, towards=_dir)
             x = next_position[0]; y = next_position[1]
             if next_position not in self.visited and maze[x][y] != '▇':
-                find = self.dfs(next_position, path+now_position)
+                self.dfs(next_position, path+now_position)
         return False
 
 
