@@ -796,6 +796,33 @@ edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
 
 Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/MPI-Interest-Group#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
 
+Consider the maze is the following:
+```
+▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
+▇. .▇. . . . . . . .▇. . . . . . . .▇. .▇.
+▇. .▇. .▇.▇.▇.▇.▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.
+▇. . . .▇. . . .▇. .▇. . . .▇. .▇. . . .▇.
+▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇. .▇.
+▇. . . . . . . .▇. .▇. . . .▇. . . . . .▇.
+▇. .▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇.
+▇. . . . . . . . . .▇. .▇. . . .▇. . . .▇.
+▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇. .▇.
+▇. .▇. . . . . . . .▇. . . . . .▇. .▇. .▇.
+▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.▇.▇.▇.▇. .▇. .▇.
+▇. . . .▇. . . .▇. . . .▇. . . .▇. .▇. .▇.
+▇.▇.▇. .▇.▇.▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+▇. .▇. . . . . .▇. . . . . .▇. .▇. .▇. .▇.
+▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+▇. . . . . .▇. . . . . .▇. .▇. . . .▇. .▇.
+▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇. .▇.▇.▇. .▇.
+▇. . . . . .▇. .▇. .▇. . . .▇. .▇. . . .▇.
+▇. .▇.▇.▇. .▇. .▇. .▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇.
+▇. . . .▇. . . .▇. . . . . . . . . . . .▇.
+▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
+```
+
+To let computer walk through the maze, we can adopt DFS in the problem solving program. Here is the pseudo code.
+
 ```python
 def dfs(now_position):
     visited.append(now_position)
@@ -807,4 +834,127 @@ def dfs(now_position):
             dfs(next_position)
 ```
 
-## 
+Please try to solve the previous maze problem by referencing pseudo code (Or any type of Algorithms you like or you have created). And mark the path using `*`.
+
+Here is the code to help your program reading and storing the maze. [[src code]](./codes/algorithms/maze_parser.py)
+
+```python
+maze = '''▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
+          ▇.#.▇. . . . . . . .▇. . . . . . . .▇. .▇.
+          ▇. .▇. .▇.▇.▇.▇.▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.
+          ▇. . . .▇. . . .▇. .▇. . . .▇. .▇. . . .▇.
+          ▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇. .▇.
+          ▇. . . . . . . .▇. .▇. . . .▇. . . . . .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇.
+          ▇. . . . . . . . . .▇. .▇. . . .▇. . . .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇. .▇.
+          ▇. .▇. . . . . . . .▇. . . . . .▇. .▇. .▇.
+          ▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.▇.▇.▇.▇. .▇. .▇.
+          ▇. . . .▇. . . .▇. . . .▇. . . .▇. .▇. .▇.
+          ▇.▇.▇. .▇.▇.▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+          ▇. .▇. . . . . .▇. . . . . .▇. .▇. .▇. .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+          ▇. . . . . .▇. . . . . .▇. .▇. . . .▇. .▇.
+          ▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇. .▇.▇.▇. .▇.
+          ▇. . . . . .▇. .▇. .▇. . . .▇. .▇. . . .▇.
+          ▇. .▇.▇.▇. .▇. .▇. .▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇.
+          ▇. . . .▇. . . .▇. . . . . . . . . . .#.▇.
+          ▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.'''
+
+def maze_parser(maze):
+    res = []
+    for line in maze.strip().split('\n'):
+        line = line.strip().split('.')
+        res.append(line)
+    return res
+
+if __name__ == '__main__':
+    maze = maze_parser(maze)
+    start = [1, 1]
+    end = [19, 19]
+```
+
+Using the above parser, the maze can be processed into an 2-D matrix (or array). you can access any `(x, y)` by invoking `maze[x][y]`.
+
+**Sol.** [[src code]](./codes/algorithms/dfs_maze.py)
+
+```python
+maze = '''▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
+          ▇.#.▇. . . . . . . .▇. . . . . . . .▇. .▇.
+          ▇. .▇. .▇.▇.▇.▇.▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.
+          ▇. . . .▇. . . .▇. .▇. . . .▇. .▇. . . .▇.
+          ▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇. .▇.
+          ▇. . . . . . . .▇. .▇. . . .▇. . . . . .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇.
+          ▇. . . . . . . . . .▇. .▇. . . .▇. . . .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇. .▇.
+          ▇. .▇. . . . . . . .▇. . . . . .▇. .▇. .▇.
+          ▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.▇.▇.▇.▇. .▇. .▇.
+          ▇. . . .▇. . . .▇. . . .▇. . . .▇. .▇. .▇.
+          ▇.▇.▇. .▇.▇.▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+          ▇. .▇. . . . . .▇. . . . . .▇. .▇. .▇. .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+          ▇. . . . . .▇. . . . . .▇. .▇. . . .▇. .▇.
+          ▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇. .▇.▇.▇. .▇.
+          ▇. . . . . .▇. .▇. .▇. . . .▇. .▇. . . .▇.
+          ▇. .▇.▇.▇. .▇. .▇. .▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇.
+          ▇. . . .▇. . . .▇. . . . . . . . . . .#.▇.
+          ▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.'''
+
+def maze_parser(maze):
+    res = []
+    for line in maze.strip().split('\n'):
+        line = line.strip().split('.')
+        res.append(line)
+    return res
+
+class Search:
+    def __init__(self, maze, start, end):
+        self.visited = []
+        self.maze = maze
+        self.start = start
+        self.end = end
+        self.size = end[0] + 2
+        self.move_dir = [[-1, 0], [0, -1], [1, 0], [0, 1]]
+        self.path = None
+        self.solve()
+
+    def move(self, _from, towards):
+        return [_from[0]+towards[0], _from[1]+towards[1]]
+
+    def generate_path(self):
+        for step in self.path:
+            self.maze[step[0]][step[1]] = '*'
+
+    def print_maze(self):
+        for i in range(self.size):
+            for j in range(self.size):
+                print(self.maze[i][j], end=' ')
+            print()
+
+    def solve(self):
+        self.dfs(self.start, path=[])
+        self.path = [self.path[i:i+2] for i in range(0, len(self.path), 2)]
+        self.generate_path()
+        self.print_maze()
+
+    def dfs(self, now_position, path):
+        self.visited.append(now_position)
+        if now_position == self.end:
+            self.path = path
+            return True
+        for _dir in self.move_dir:
+            next_position = self.move(_from=now_position, towards=_dir)
+            x = next_position[0]; y = next_position[1]
+            if next_position not in self.visited and maze[x][y] != '▇':
+                find = self.dfs(next_position, path+now_position)
+        return False
+
+
+if __name__ == '__main__':
+    maze = maze_parser(maze)
+    start = [1, 1]
+    end = [19, 19]
+    search = Search(maze, start, end)
+```
+
