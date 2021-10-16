@@ -1026,6 +1026,8 @@ edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
 
 The explanation of Floyed Warshall Algorithm is a little bit complicated in Wiki. From my perspective and understanding, this algorithm is quite easy to understand, the core code is relaxation (松弛操作) while it is the core code of all kinds of Algorithms applied to Shortest Path problems. For the relaxation, the pseudo code below shows how to implement it.
 
+NB: `dis[a][b]` means the minimum distance between node **A** and node **B**, the `dis[][]` array is initialize by infinity number.
+
 ```python
 # Relaxation
 for (from, to, bridge) in adj:
@@ -1037,7 +1039,11 @@ dis[from][to] = min(
 	
 ```
 
-That is, for each three distinct node, there are three paths need to be compaired, namely `O`, `D`, and `B`. 
+That is, for each three distinct node, there are three paths need to be compaired, namely `O`, `D`, and `B`. For each pair of path (or abstract path) to iterate, actually we just need to consider the following question.
+
+![](./assets/map.jpg)
+
+> We go to **B** from **A**. Is the path `A --> B`  shorter or we finding a bridge node **C** and the path `A --> C --> B` shorter?
 
 Full code implementation
 
@@ -1072,8 +1078,5 @@ if __name__ == '__main__':
     floyed(adj)
 ```
 
-
 ## Breadth First Search
-
-
 
