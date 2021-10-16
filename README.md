@@ -1048,7 +1048,7 @@ That is, for each three distinct node, there are three paths need to be compaire
 >
 > As for `dis[F][T]` records the minimum distance rather than a specific path, that means, we can go to **T** from **F** with minimum distance to walk regardless of which path.
 >
-> As a result, `dis[from][bridge] + dis[bridge][to]` may not represent the relation of three node like `**E** -> (**F**) -> **D**`. But it can represent `**E** -> (**F** -> **G**) -> **D**` due to the specific path is omited, we care about the distance instead.
+> As a result, `dis[from][bridge] + dis[bridge][to]` may not represent the relation of three node like `E -> (F) -> D`. But it can represent `E -> (F -> G) -> D` due to the specific path is omited, we care about the distance instead.
 
 Full code implementation
 
@@ -1085,3 +1085,30 @@ if __name__ == '__main__':
 
 ## Breadth First Search
 
+In the last section you have learned one of the Algorithms to solve the Shortest Path problem. Before I introduced the following **Dijkstra** and **SPFA** Algorithms, it is needed to have some ideas on **Breadth First Search** which is widely applied on many kind of searching problems as well as the following two Shortest Path finding Algorithms.
+
+You may noticed that the name of **Breadth First Search** (abbr. BFS) is similar to the name of DFS. The implementation of the two algorithms is wholey different since DFS adopts **recursion** while BFS adopts methodology of **queue** (remember that it is a data structure introduced below?).
+
+A lively metaphor is that BFS is like flooding (or spread of epidemic) , you can check [this](https://www.youtube.com/watch?v=x-VTfcmrLEQ) Youtube video to see the algorithm animation. 
+
+![](./assets/bfs-anim.png)
+
+We can see that, for nodes in same depth, they are visited at the same time (actually, it have the order, but the node in next depth cannot be visited the same time as current depth).
+
+Here shows the pseudo code.
+
+```python
+queue = []
+queue.append(start)
+visit(start)
+while queue not empty:
+	this_node = queue.pop()
+	# do some stuffs
+	for next_node in this_node.childrens:
+		if next_node not visited:
+			queue.append(next_node)
+			visit(next_node)
+```
+
+`visit()` is the function to mark a node as visited
+`this_node.childrens` means the adjacent node to current node
