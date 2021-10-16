@@ -1024,6 +1024,23 @@ edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
 
 ### Floyed Warshall
 
+The explanation of Floyed Warshall Algorithm is a little bit complicated in Wiki. From my perspective and understanding, this algorithm is quite easy to understand, the core code is relaxation (松弛操作) while it is the core code of all kinds of Algorithms applied to Shortest Path problems. For the relaxation, the pseudo code below shows how to implement it.
+
+```python
+# Relaxation
+for (from, to, bridge) in adj:
+dis[from][to] = min(
+	dis[from][to],    # (O)rigin distance
+	adj[from][to],    # (D)irect path
+	dis[from][bridge] + dis[bridge][to],    # (B)ridge node path
+)
+	
+```
+
+That is, for each three distinct node, there are three paths need to be compaired, namely `O`, `D`, and `B`. 
+
+Full code implementation
+
 ```python
 def add_edge(adj, edge):
     f, r, v = edge.split(' ')
