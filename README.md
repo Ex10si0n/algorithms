@@ -1043,8 +1043,11 @@ That is, for each three distinct node, there are three paths need to be compaire
 ![](./assets/map.jpg)
 
 > We go to **B** from **A**. Is the path `A --> B`  shorter or we finding a bridge node **C** and the path `A --> C --> B` shorter?
+>
 > To make it abstract, for any node **F**, **T**: if there is a bridge node **V** can make the distance shorter, adopt it.
+>
 > As for `dis[F][T]` records the minimum distance rather than a specific path, that means, we can go to **T** from **F** with minimum distance to walk regardless of which path.
+>
 > As a result, `dis[from][bridge] + dis[bridge][to]` may not represent the relation of three node like `**E** -> (**F**) -> **D**`. But it can represent `**E** -> (**F** -> **G**) -> **D**` due to the specific path is omited, we care about the distance instead.
 
 Full code implementation
