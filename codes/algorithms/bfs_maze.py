@@ -35,7 +35,7 @@ class Search:
         self.end = end
         self.size = end[0] + 2
         self.move_dir = [[-1, 0], [0, -1], [1, 0], [0, 1]]
-        self.path_map = [[None for i in range(self.size)] for j in range(self.size)]
+        self.path_map = [[[0, 0] for i in range(self.size)] for j in range(self.size)]
         self.solve()
 
     def record_path(self, _from, towards):
@@ -46,16 +46,15 @@ class Search:
     def move(self, _from, towards):
         return [_from[0] + towards[0], _from[1] + towards[1]]
 
-    def draw_path(self):
-        dir2arrow = {'[-1, 0]': '↑', '[0, -1]': '←', '[1, 0]': '↓', '[0, 1]': '→'}
+    def draw_path(self, print_dir=False):
+        dir2arrow = {'[0, 0]': ' ', '[-1, 0]': '↑', '[0, -1]': '←', '[1, 0]': '↓', '[0, 1]': '→'}
         for i in range(len(self.path_map)):
             for j in range(len(self.path_map)):
-                temp = self.path_map[i][j]
-                print(temp)
-                str(temp)
-                s = dir2arrow[temp]
-                print(s, end=' ')
-            print()
+                _dir = self.path_map[i][j]
+                arrow = dir2arrow[str(_dir)]
+                if arrow != ' ': self.maze[i][j] = '*'
+                if print_dir: print(arrow, end=' ')
+            if print_dir: print()
 
     def print_maze(self):
         for i in range(self.size):
@@ -75,7 +74,7 @@ class Search:
         while queue:
             now_position = queue.pop()
             if now_position == self.end:
-                print("Find")
+                return True
             for _dir in self.move_dir:
                 next_position = self.move(_from=now_position, towards=_dir)
                 x = next_position[0]; y = next_position[1]
@@ -83,6 +82,7 @@ class Search:
                     self.record_path(now_position, _dir)
                     queue.append(next_position)
                     self.visited.append(next_position)
+        return False
         
 if __name__ == '__main__':
     maze = maze_parser(maze)

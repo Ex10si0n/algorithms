@@ -1112,3 +1112,48 @@ while queue not empty:
 
 `visit()` is the function to mark a node as visited
 `this_node.childrens` means the adjacent node to current node
+
+### Maze Problem II
+
+Adopting BFS in solving Maze Problem is another way of thinking. For the question, please refer to the previous [Maze Problem I](https://github.com/Ex10si0n/MPI-Interest-Group#maze-problem-i). Let us try to implement the maze solver by adopting BFS.
+
+Maze parser code here: (You are free to change the map pattern if you like using [maze.py](./codes/algorithms/maze.py))
+
+```python
+maze = '''▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.
+          ▇.#.▇. . . . . . . .▇. . . . . . . .▇. .▇.
+          ▇. .▇. .▇.▇.▇.▇.▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.
+          ▇. . . .▇. . . .▇. .▇. . . .▇. .▇. . . .▇.
+          ▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇. .▇.
+          ▇. . . . . . . .▇. .▇. . . .▇. . . . . .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇.▇.▇. .▇.▇.▇.
+          ▇. . . . . . . . . .▇. .▇. . . .▇. . . .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇. .▇.
+          ▇. .▇. . . . . . . .▇. . . . . .▇. .▇. .▇.
+          ▇. .▇.▇.▇. .▇.▇.▇. .▇. .▇.▇.▇.▇.▇. .▇. .▇.
+          ▇. . . .▇. . . .▇. . . .▇. . . .▇. .▇. .▇.
+          ▇.▇.▇. .▇.▇.▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+          ▇. .▇. . . . . .▇. . . . . .▇. .▇. .▇. .▇.
+          ▇. .▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇.
+          ▇. . . . . .▇. . . . . .▇. .▇. . . .▇. .▇.
+          ▇. .▇.▇.▇.▇.▇. .▇. .▇. .▇. .▇. .▇.▇.▇. .▇.
+          ▇. . . . . .▇. .▇. .▇. . . .▇. .▇. . . .▇.
+          ▇. .▇.▇.▇. .▇. .▇. .▇.▇.▇.▇.▇.▇.▇. .▇.▇.▇.
+          ▇. . . .▇. . . .▇. . . . . . . . . . .#.▇.
+          ▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.▇.'''
+
+def maze_parser(maze):
+    res = []
+    for line in maze.strip().split('\n'):
+        line = line.strip().split('.')
+        res.append(line)
+    return res
+
+if __name__ == '__main__':
+    maze = maze_parser(maze)
+    start = [1, 1]
+    end = [19, 19]
+```
+
+#### Sol.
+
