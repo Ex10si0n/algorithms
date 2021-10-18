@@ -27,10 +27,10 @@ OIWiki: https://oi-wiki.org ![](https://img.shields.io/badge/Web-Wiki-blue)
 Clone via HTTPS using following command or Click `Code` then `Download ZIP`.
 
 ```bash
-git clone https://github.com/Ex10si0n/MPI-Interest-Group.git
+git clone https://github.com/Ex10si0n/Algorithms.git
 ```
 
-You can open `README.md` (Markdown File: open via [Typora](https://typora.io) or notepad.exe) locally or on [this](https://github.com/Ex10si0n/MPI-Interest-Group) page.
+You can open `README.md` (Markdown File: open via [Typora](https://typora.io) or notepad.exe) locally or on [this](https://github.com/Ex10si0n/Algorithms) page.
 
 ## Assessments
 
@@ -46,28 +46,28 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
 **Following topics will be covered in the Interest Group**
 
 * **Fundamental Methodologies**
-  * [Greedy (贪心)](https://github.com/Ex10si0n/MPI-Interest-Group#greedy)
-  * [Binary Search (二分)](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search)
-  * [Recursion (递归)](https://github.com/Ex10si0n/MPI-Interest-Group#recursion)
-  * [Data Structure (数据结构) ](https://github.com/Ex10si0n/MPI-Interest-Group#data-structure)
+  * [Greedy (贪心)](https://github.com/Ex10si0n/Algorithms#greedy)
+  * [Binary Search (二分)](https://github.com/Ex10si0n/Algorithms#binary-search)
+  * [Recursion (递归)](https://github.com/Ex10si0n/Algorithms#recursion)
+  * [Data Structure (数据结构) ](https://github.com/Ex10si0n/Algorithms#data-structure)
     * Linear Structure
-      * [Queue (队列)](https://github.com/Ex10si0n/MPI-Interest-Group#queue)
-      * [Stack (栈)](https://github.com/Ex10si0n/MPI-Interest-Group#stack)
+      * [Queue (队列)](https://github.com/Ex10si0n/Algorithms#queue)
+      * [Stack (栈)](https://github.com/Ex10si0n/Algorithms#stack)
     * Generic Tree
-      * [Tree (树)](https://github.com/Ex10si0n/MPI-Interest-Group#tree) 
-      * [Binary Tree (二叉树)]((https://github.com/Ex10si0n/MPI-Interest-Group#binary-tree)) 
+      * [Tree (树)](https://github.com/Ex10si0n/Algorithms#tree) 
+      * [Binary Tree (二叉树)]((https://github.com/Ex10si0n/Algorithms#binary-tree)) 
       * Linear Structure (maintained by Tree) (由树维护的线性结构)
-        * [Binary Indexed Tree (二叉索引树)](https://github.com/Ex10si0n/MPI-Interest-Group#binary-indexed-tree)
-        * [Segment Tree (线段树)](https://github.com/Ex10si0n/MPI-Interest-Group#segment-tree)
+        * [Binary Indexed Tree (二叉索引树)](https://github.com/Ex10si0n/Algorithms#binary-indexed-tree)
+        * [Segment Tree (线段树)](https://github.com/Ex10si0n/Algorithms#segment-tree)
     * Generic Graph
-      * [Graph (图)](https://github.com/Ex10si0n/MPI-Interest-Group#graph)
+      * [Graph (图)](https://github.com/Ex10si0n/Algorithms#graph)
 * **Graph Theory (图论)**
   
-  * [Minimum Spanning Tree (最小生成树)](https://github.com/Ex10si0n/MPI-Interest-Group#minimum-spanning-tree)
-  * [Depth-first Search (深度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#depth-first-search)
+  * [Minimum Spanning Tree (最小生成树)](https://github.com/Ex10si0n/Algorithms#minimum-spanning-tree)
+  * [Depth-first Search (深度优先搜索)](https://github.com/Ex10si0n/Algorithms#depth-first-search)
   * Multiple Source Shortest Path - I (多源最短路径)
-    * [Floyed-Warshall](https://github.com/Ex10si0n/MPI-Interest-Group#floyed-warshall)
-  * [Breadth-first Search (广度优先搜索)](https://github.com/Ex10si0n/MPI-Interest-Group#breadth-first-search)
+    * [Floyed-Warshall](https://github.com/Ex10si0n/Algorithms#floyed-warshall)
+  * [Breadth-first Search (广度优先搜索)](https://github.com/Ex10si0n/Algorithms#breadth-first-search)
   
   * Shortest Path - II (单源最短路径) 
     * Dijkstra
@@ -343,7 +343,7 @@ if __name__ == "__main__":
 
 * **Brute Force**: We can select any groups of **M** stones to be removed. And record the maximum interval of the minimal jump.
 * **Linear Search**: For the maximum interval of the minimal jump, actually we can adopt the **greedy methodology**. To try the answer(**ans**) from **L** to **1**. If two adjacent rocks has interval shorter than **ans**, then remove the next rock. If the attemption time less than **M**. It is just the optimal solution.
-* **Binary Search**: It is obvious that the answer of the question is allocated between **1** and **L**. For all possibilities we can use binary search to reduce the complexity from $O(N)$ to $O(\log N)$. Try to write the code to adopt the **binary search methodology** similar to the [given code](https://github.com/Ex10si0n/MPI-Interest-Group#binary-search).
+* **Binary Search**: It is obvious that the answer of the question is allocated between **1** and **L**. For all possibilities we can use binary search to reduce the complexity from $O(N)$ to $O(\log N)$. Try to write the code to adopt the **binary search methodology** similar to the [given code](https://github.com/Ex10si0n/Algorithms#binary-search).
 
 **Core Code**
 
@@ -567,7 +567,7 @@ For example, to get the interval sum(or any other data of an interval you define
 
 ##### Segment Tree
 
-Let us consider the previous question in [Binary Indexed Tree](https://github.com/Ex10si0n/MPI-Interest-Group#linear-structure-maintained-by-tree)
+Let us consider the previous question in [Binary Indexed Tree](https://github.com/Ex10si0n/Algorithms#linear-structure-maintained-by-tree)
 
 A **simple solution** is to run a loop from l to r and calculate the sum of elements in the given range. To update a value, simply do `arr[i] = x`. The first operation takes $O(n)$ time and the second operation takes $O(1)$ time. 
 
@@ -767,7 +767,7 @@ if __name__ == "__main__":
 
 ## Depth First Search
 
-Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/MPI-Interest-Group#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
+Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/Algorithms#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
 
 Consider the maze is the following:
 
