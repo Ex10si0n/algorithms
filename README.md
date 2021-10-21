@@ -12,15 +12,13 @@ Semester: 1
 
 ## Useful URLs
 
-Typora: https://typora.io  ![](https://img.shields.io/badge/Web-.md-red)
+Typora: [typora.io](https://typora.io)  ![](https://img.shields.io/badge/Web-.md-red)
 
-Google Colab: https://colab.research.google.com  ![](https://img.shields.io/badge/Web-Python-green)
+Google Colab: [google/colab](https://colab.research.google.com)  ![](https://img.shields.io/badge/Web-Python-green)
 
-LeetCode: https://leetcode.com/problemset/all/  ![](https://img.shields.io/badge/Web-OJ-blue)
+LeetCode: [leetcode/problemset](https://leetcode.com/problemset/all/)  ![](https://img.shields.io/badge/Web-OJ-blue)
 
-POJ: http://poj.org/problemlist  ![](https://img.shields.io/badge/Web-OJ-blue)
-
-OIWiki: https://oi-wiki.org ![](https://img.shields.io/badge/Web-Wiki-blue)
+POJ: [poj/problemlist](http://poj.org/problemlist)  ![](https://img.shields.io/badge/Web-OJ-blue)
 
 ## How to use this repository?
 
@@ -62,13 +60,11 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
     * Generic Graph
       * [Graph (图)](https://github.com/Ex10si0n/Algorithms#graph)
 * **Graph Theory (图论)**
-  
   * [Minimum Spanning Tree (最小生成树)](https://github.com/Ex10si0n/Algorithms#minimum-spanning-tree)
   * [Depth-first Search (深度优先搜索)](https://github.com/Ex10si0n/Algorithms#depth-first-search)
   * Multiple Source Shortest Path - I (多源最短路径)
     * [Floyed-Warshall](https://github.com/Ex10si0n/Algorithms#floyed-warshall)
   * [Breadth-first Search (广度优先搜索)](https://github.com/Ex10si0n/Algorithms#breadth-first-search)
-  
   * Shortest Path - II (单源最短路径) 
     * Dijkstra
     * SPFA
@@ -113,7 +109,7 @@ Demo at [Jetbrains/using-product-as-the-vim-editor](https://www.jetbrains.com/he
 
 ## LeetCode
 
-![](https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg)
+![](./assets/logo-dark.e99485d9b.svg)
 
 LeetCode in [知乎](https://www.zhihu.com/topic/19925162/hot). It is a good platform for elementary algorithms learning. It is appropriate for preparing for a job as well as learning algorithms.
 
@@ -135,7 +131,7 @@ Given `n` non-negative integers `a1, a2, ..., an` , where each represents a poin
 
 **Example 1:**
 
-![img](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg)
+![img](./assets/question_11.jpg)
 
 ```
 Input: height = [1,8,6,2,5,4,8,3,7]
@@ -151,7 +147,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 #### Sol.
 
-![Picture0.png](https://pic.leetcode-cn.com/1628780627-VtSmcP-Picture0.png)
+![Picture0.png](./assets/1628780627-VtSmcP-Picture0.png)
 
 * If in Brute Force (暴力枚举) way, we can encount `n * n` possibilities then calculate each area to get the max area.
 * Greedy Approach can optimize the complexity from $O(N^2)$ to $O(N)$
