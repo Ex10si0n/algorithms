@@ -4,9 +4,9 @@
 
 Lecturer: Steve Yan [![](https://img.shields.io/badge/Web-aspires.cc-blue)](https://www.aspires.cc)
 
-Location: TBA
+Location: Macao Ploytechnic Institute
 
-Time Schedule: TBA
+Time Schedule: From 26 Oct. Each Tuesday, 18:00 - 19:30
 
 Semester: 1
 
