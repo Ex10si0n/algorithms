@@ -70,10 +70,10 @@ No slides are distributed (cuz. I do not regard slides as effecient format to di
   * [Breadth-first Search (广度优先搜索)](https://github.com/Ex10si0n/Algorithms#breadth-first-search)
   
   * Shortest Path - II (单源最短路径) 
-    * Dijkstra
-    * SPFA
+    * [Dijkstra](https://github.com/Ex10si0n/Algorithms#dijkstra)
+    * [SPFA](https://github.com/Ex10si0n/Algorithms#spfa)
   * Network Flow (网络流)
-    * Ford-Fulkerson (最大流算法)
+    * [Ford-Fulkerson (最大流算法)](https://github.com/Ex10si0n/Algorithms#ford-fulkerson)
   * Bipartite Graph (二分图)
 
 # Before We Start (for MPI Algorithms lecture)
@@ -1294,3 +1294,4 @@ if __name__ == '__main__':
     search = Search(maze, start, end)
 ```
 
+### LC
