@@ -4,7 +4,7 @@
 
 Lecturer: Steve Yan [![](https://img.shields.io/badge/Web-aspires.cc-blue)](https://www.aspires.cc)
 
-Location: Macao Ploytechnic Institute
+Location: Macao Polytechnic Institute
 
 Time Schedule: From 26 Oct. Each Tuesday, 18:00 - 19:30
 
