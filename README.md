@@ -263,7 +263,7 @@ answer = mid
 
 By extension, when solving a problem, we can also adopt binary search for searching the solution from a sorted list of possible solution. Here is an example, make your hands dirty.
 
-### [P2678](https://www.luogu.com.cn/problem/P2678) Stones (NOIP15 Day2 Q1)
+### [Assignment I][P2678](https://www.luogu.com.cn/problem/P2678) Stones (NOIP15 Day2 Q1)
 
 For a better understanding, you can read the problem in [CN Version](./assets/NOIP15_SD2T1.png).
 
