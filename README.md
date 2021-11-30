@@ -1290,4 +1290,153 @@ if __name__ == '__main__':
     search = Search(maze, start, end)
 ```
 
-### LC
+### LC 733
+
+An image is represented by an `m x n` integer grid `image` where `image[i][j]` represents the pixel value of the image.
+
+You are also given three integers `sr`, `sc`, and `newColor`. You should perform a **flood fill** on the image starting from the pixel `image[sr][sc]`.
+
+To perform a **flood fill**, consider the starting pixel, plus any pixels connected **4-directionally** to the starting pixel of the same color as the starting pixel, plus any pixels connected **4-directionally** to those pixels (also with the same color), and so on. Replace the color of all of the aforementioned pixels with `newColor`.
+
+Return *the modified image after performing the flood fill*.
+
+ 
+
+**Example 1:**
+
+![img](https://assets.leetcode.com/uploads/2021/06/01/flood1-grid.jpg)
+
+```
+Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2
+Output: [[2,2,2],[2,2,0],[2,0,1]]
+Explanation: From the center of the image with position (sr, sc) = (1, 1) (i.e., the red pixel), all pixels connected by a path of the same color as the starting pixel (i.e., the blue pixels) are colored with the new color.
+Note the bottom corner is not colored 2, because it is not 4-directionally connected to the starting pixel.
+```
+
+**Example 2:**
+
+```
+Input: image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2
+Output: [[2,2,2],[2,2,2]]
+```
+
+ 
+
+**Constraints:**
+
+- `m == image.length`
+- `n == image[i].length`
+- `1 <= m, n <= 50`
+- `0 <= image[i][j], newColor < 216`
+- `0 <= sr < m`
+- `0 <= sc < n`
+
+```java
+class Solution {
+    public void dfs(int[][] image, int origin, int x, int y, int newColor) {
+        if (newColor == origin) return;
+        int[] dx = {0, 0, -1, 1};
+        int[] dy = {-1, 1, 0, 0};
+        image[x][y] = newColor;
+        for (int i = 0; i < 4; i++) {
+            int new_x = x + dx[i];
+            int new_y = y + dy[i];
+            if (new_x >= 0 && new_x < image.length && new_y >= 0 && new_y < image[0].length) {
+                if (image[new_x][new_y] == origin) dfs(image, origin, new_x, new_y, newColor);
+            }
+        }
+    }
+    
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        dfs(image, image[sr][sc], sr, sc, newColor);
+        return image;
+    }
+}
+```
+
+### LC 1559
+
+Given a 2D array of characters `grid` of size `m x n`, you need to find if there exists any cycle consisting of the **same value** in `grid`.
+
+A cycle is a path of **length 4 or more** in the grid that starts and ends at the same cell. From a given cell, you can move to one of the cells adjacent to it - in one of the four directions (up, down, left, or right), if it has the **same value** of the current cell.
+
+Also, you cannot move to the cell that you visited in your last move. For example, the cycle `(1, 1) -> (1, 2) -> (1, 1)` is invalid because from `(1, 2)` we visited `(1, 1)` which was the last visited cell.
+
+Return `true` if any cycle of the same value exists in `grid`, otherwise, return `false`.
+
+ 
+
+**Example 1:**
+
+**![img](https://assets.leetcode.com/uploads/2020/07/15/1.png)**
+
+```
+Input: grid = [["a","a","a","a"],["a","b","b","a"],["a","b","b","a"],["a","a","a","a"]]
+Output: true
+Explanation: There are two valid cycles shown in different colors in the image below:
+```
+
+**Example 2:**
+
+**![img](https://assets.leetcode.com/uploads/2020/07/15/22.png)**
+
+```
+Input: grid = [["c","c","c","a"],["c","d","c","c"],["c","c","e","c"],["f","c","c","c"]]
+Output: true
+Explanation: There is only one valid cycle highlighted in the image below:
+```
+
+**Example 3:**
+
+**![img](https://assets.leetcode.com/uploads/2020/07/15/3.png)**
+
+```
+Input: grid = [["a","b","b"],["b","z","b"],["b","b","a"]]
+Output: false
+```
+
+ 
+
+**Constraints:**
+
+- `m == grid.length`
+- `n == grid[i].length`
+- `1 <= m, n <= 500`
+- `grid` consists only of lowercase English letters.
+
+```java
+class Solution {
+    
+    public static int[][] visited;
+    public static int[] dx = {0, -1, 0, 1};
+    public static int[] dy = {-1, 0, 1, 0};
+    
+    public boolean inCircular(char[][] grid, int x, int y, int depth) {
+        if (visited[x][y] > 0) return depth - visited[x][y] >= 3;
+        visited[x][y] = depth;
+        for (int i = 0; i < 4; i++) {
+            int new_x = x + dx[i];
+            int new_y = y + dy[i];
+            if (0 <= new_x && new_x < grid.length && 0 <= new_y && new_y < grid[0].length) {
+                if (grid[new_x][new_y] == grid[x][y]) {
+                    if(inCircular(grid, new_x, new_y, depth + 1)) return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    public boolean containsCycle(char[][] grid) {
+        visited = new int[grid.length][grid[0].length];
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (visited[i][j] == 0) {
+                    if (inCircular(grid, i, j, 1)) return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+```
+
