@@ -1,8 +1,4 @@
----
-description: Introduction
----
-
-# README
+# README [algo.aspires.cc](algo.aspires.cc)
 
 ## [MPI Algorithms Interest Group](algo.aspires.cc)
 
