@@ -1,8 +1,8 @@
 # Linear Structure
 
-#### Queue
+## Queue
 
-A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO). A good example of a queue is any queue of consumers for a resource where the consumer that came first is served first.
+A Queue is a linear structure that follows a particular order in which the operations are performed. The order is First In First Out (FIFO). A good example of a queue is any queue of consumers for a resource where the consumer that came first is served first.
 
 ![Types of Queue in Data structure | Queue Data structure Introduction and  Operations](https://i1.faceprep.in/Companies-1/queue-operations.gif)
 
@@ -22,9 +22,9 @@ class Queue:
         return val
 ```
 
-#### Stack
+## Stack
 
-Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
 
 ![Stack Data Structure and Implementation in Python, Java and C/C++](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
 
