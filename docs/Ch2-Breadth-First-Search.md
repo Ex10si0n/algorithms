@@ -1,6 +1,4 @@
-# Chapter 2. Graph Theory
-
-## Breadth First Search
+# Breadth First Search
 
 In the last section you have learned one of the Algorithms to solve the Shortest Path problem. Before I introduced the following **Dijkstra** and **SPFA** Algorithms, it is needed to have some ideas on **Breadth First Search** which is widely applied on many kind of searching problems as well as the following two Shortest Path finding Algorithms.
 

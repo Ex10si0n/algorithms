@@ -1,6 +1,4 @@
-# Chapter 1. Fundamental Algorithms
-
-### Generic Tree
+# Generic Tree
 
 It is a **hierarchical** structure as elements in a Tree are arranged in multiple levels. In the Tree data structure, the topmost node is known as a root node. Each node contains some data, and data can be of any type.
 

@@ -1,6 +1,4 @@
-# Chapter 1. Fundamental Algorithms
-
-### Generic Graph
+# Generic Graph
 
 In this section, I will only introduce the data structure of generic graph and the implementation. The more complex version of graph is in the following chapter.
 

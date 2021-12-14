@@ -1,7 +1,4 @@
-# Chapter 2. Graph Theory
-
-
-## Depth First Search
+# Depth First Search
 
 Depth First Search (abbr. DFS) (深度优先搜索) is an algorithm for graph or tree traversal or searching a specific node in a tree. It adopts [recursion](https://github.com/Ex10si0n/Algorithms#recursion), so you should understand recursion for a better learning of DFS. For a simple example, there is code snippet of DFS.
 

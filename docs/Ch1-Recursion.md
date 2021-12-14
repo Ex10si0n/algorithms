@@ -1,6 +1,4 @@
-# Chapter 1. Fundamental Algorithms
-
-## Recursion
+# Recursion
 
 The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called as recursive function. Using recursive methodology, certain problems can be solved quite easily. 
 

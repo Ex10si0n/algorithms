@@ -1,6 +1,4 @@
-# Chapter 2. Graph Theory
-
-## Minimum Spanning Tree
+# Minimum Spanning Tree
 
 **What is a Spanning Tree?**
 

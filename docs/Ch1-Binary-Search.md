@@ -1,6 +1,4 @@
-# Chapter 1. Fundamental Algorithms
-
-## Binary Search
+# Binary Search
 
 Binary Search is an efficient algorithm for finding an item from a **sorted** set of items. Here is an example for finding `-1` from the given list.
 

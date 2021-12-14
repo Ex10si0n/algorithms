@@ -1,6 +1,4 @@
-# Chapter 2. Graph Theory
-
-## Shortest Path I
+# Shortest Path I
 
 Here is the map of Ex10si0n island. He designed the arrangement of each town (namely A B C D E F G -town) with roads. When the tourist go through a certain path, he or she will pay for a number of coins. The cost of each road is the number inside each diamonds.
 

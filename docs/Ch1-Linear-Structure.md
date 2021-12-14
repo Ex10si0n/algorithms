@@ -1,8 +1,4 @@
-# Chapter 1. Fundamental Algorithms
-
-## Data Structure
-
-### Linear Structure
+# Linear Structure
 
 #### Queue
 

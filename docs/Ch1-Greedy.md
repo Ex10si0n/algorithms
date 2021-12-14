@@ -1,6 +1,4 @@
-# Chapter 1. Fundamental Algorithms
-
-## Greedy
+# Greedy
 
 Greedy Algorithms can be adopted when a specific problem can be proofed that when locally optimal choice in each stages can produce a globally optimal choice. But in many problems, all stages is optimized does not means that it will be globally optimized.
 

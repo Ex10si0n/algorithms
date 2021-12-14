@@ -2,7 +2,7 @@
 description: Introduction
 ---
 
-# README
+# Before We Start
 
 ## [MPI Algorithms Interest Group](https://github.com/Ex10si0n/Algorithms)
 
