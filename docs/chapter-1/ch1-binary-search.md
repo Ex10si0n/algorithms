@@ -2,9 +2,9 @@
 
 Binary Search is an efficient algorithm for finding an item from a **sorted** set of items. Here is an example for finding `-1` from the given list.
 
-![](./assets/binary-search-example.png)
+![](../assets/binary-search-example.png)
 
-As the figure shows, adopting binary search can lower the time complexity from $O(N)$ to $O(\log N)$ [Note: When analysising Algorithms time and space complexity, $\log N$ stands for $log_2 N$]
+As the figure shows, adopting binary search can lower the time complexity from $O(N)$ to $O(\log N)$ \[Note: When analysising Algorithms time and space complexity, $\log N$ stands for $log\_2 N$]
 
 The code pattern of binary search algorithms are easy to understand, we often use `l`, `r`, `mid` to point with the left and right pointer. `mid` is always calculated with the formular `l + r // 2`.
 
@@ -24,9 +24,9 @@ answer = mid
 
 By extension, when solving a problem, we can also adopt binary search for searching the solution from a sorted list of possible solution. Here is an example, make your hands dirty.
 
-### [Assignment I][P2678](https://www.luogu.com.cn/problem/P2678) Stones (NOIP15 Day2 Q1)
+### \[Assignment I][P2678](https://www.luogu.com.cn/problem/P2678) Stones (NOIP15 Day2 Q1)
 
-For a better understanding, you can read the problem in [CN Version](./assets/NOIP15_SD2T1.png).
+For a better understanding, you can read the problem in [CN Version](../assets/NOIP15\_SD2T1.png).
 
 The annual "stone jumping" competition is about to start again! The competition will be held in a straight river with huge rocks distributed in the river. The committee has selected two rocks as the starting and ending points of the competition. Between the start point and the end point, there are **N** pieces of rocks (the rocks that do not include the start point and the end point). During the competition, the players will start from the starting point and jump to the adjacent rocks at each step until they reach the finish line.
 
@@ -34,7 +34,7 @@ In order to increase the difficulty of the competition, the committee plans to r
 
 You should write a program to read **L, N, M** that represent the distance between starting point and ending point(**L**), the number of rocks between starting point and ending point(**N**), number of rocks the committe can remove at most(**M**). The data constraint is `L >= 1, N >= M >= 0`
 
-For the following **N** lines, the i-th line has $D_i$, which represents the distance between the i-th rock and the starting point. The data constraint is `(i < j) Di < Dj, Di != Dj`
+For the following **N** lines, the i-th line has $D\_i$, which represents the distance between the i-th rock and the starting point. The data constraint is `(i < j) Di < Dj, Di != Dj`
 
 And your program should print an integer which is the maximum distance of minimum jumpping interval.
 
@@ -67,8 +67,8 @@ After removing the rocks that distance from starting point are 2 and 14, the res
 
 **Data Scaling**
 
-| Portion | M                      | N                      | L                           |
-| ------- | ---------------------- | ---------------------- | --------------------------- |
+| Portion | M                | N                | L                     |
+| ------- | ---------------- | ---------------- | --------------------- |
 | 20%     | 0 ≤ M ≤ 10       | 0 ≤ M ≤ 10       | 1 ≤ L ≤ 1,000,000,000 |
 | 30%     | 10 ≤ M ≤ 100     | 10 ≤ M ≤ 100     | 1 ≤ L ≤ 1,000,000,000 |
 | 50%     | 100 ≤ M ≤ 50,000 | 100 ≤ M ≤ 50,000 | 1 ≤ L ≤ 1,000,000,000 |
@@ -77,12 +77,12 @@ After removing the rocks that distance from starting point are 2 and 14, the res
 
 > **Mention**: You will see this **Test your code** Section when the problem is not available to test online, you may insert your codes on the template source code to implement algorithms in order to make the tester run dependablely.
 >
-> **How to test**: 
+> **How to test**:
 >
-> 	1. set `RUN_TEST = True`
-> 	2. copy the code file into directory `testing/`
-> 	3. run the code with command `python <file_name>.py`
-> 	4. Then the testing code will automatically start and result will be given
+> 1. set `RUN_TEST = True`
+> 2. copy the code file into directory `testing/`
+> 3. run the code with command `python <file_name>.py`
+> 4. Then the testing code will automatically start and result will be given
 
 **P2678 Template** (Do not change lines indicated by `#`, your code can be inserted into the `main()` or `Solution class`)
 

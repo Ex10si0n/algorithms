@@ -10,7 +10,7 @@ Given `n` non-negative integers `a1, a2, ..., an` , where each represents a poin
 
 **Example 1:**
 
-![img](./assets/question_11.jpg)
+![img](../assets/question\_11.jpg)
 
 ```
 Input: height = [1,8,6,2,5,4,8,3,7]
@@ -20,13 +20,13 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 **Constraints:**
 
-- `n == height.length`
-- `2 <= n <= 105`
-- `0 <= height[i] <= 104`
+* `n == height.length`
+* `2 <= n <= 105`
+* `0 <= height[i] <= 104`
 
 #### Sol.
 
-![Picture0.png](./assets/1628780627-VtSmcP-Picture0.png)
+![Picture0.png](../assets/1628780627-VtSmcP-Picture0.png)
 
 * If in Brute Force (暴力枚举) way, we can encount `n * n` possibilities then calculate each area to get the max area.
 * Greedy Approach can optimize the complexity from $O(N^2)$ to $O(N)$
@@ -39,7 +39,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
   * Ref. https://leetcode-cn.com/problems/container-with-most-water/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do/
   * Status Transferring Tree
 
-![](./assets/LC11.State_Tree.jpeg)
+![](../assets/LC11.State\_Tree.jpeg)
 
 ```python
 class Solution:
@@ -63,7 +63,7 @@ You are given an integer array `prices` where `prices[i]` is the price of a give
 
 On each day, you may decide to buy and/or sell the stock. You can only hold **at most one** share of the stock at any time. However, you can buy it then immediately sell it on the **same day**.
 
-Find and return *the **maximum** profit you can achieve*.
+Find and return _the **maximum** profit you can achieve_.
 
 **Example 1:**
 
@@ -94,12 +94,12 @@ Explanation: There is no way to make a positive profit, so we never buy the stoc
 
 **Constraints:**
 
-- `1 <= prices.length <= 3 * 104`
-- `0 <= prices[i] <= 104`
+* `1 <= prices.length <= 3 * 104`
+* `0 <= prices[i] <= 104`
 
 #### Sol.
 
-![Profit Graph](https://leetcode.com/media/original_images/122_maxprofit_2.PNG)
+![Profit Graph](https://leetcode.com/media/original\_images/122\_maxprofit\_2.PNG)
 
 Consider two days
 

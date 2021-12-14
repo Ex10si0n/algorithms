@@ -6,7 +6,7 @@ You are paying a visit to Ex10si0n island. Can you find the minimum cost for tra
 
 You may notice that A town is marked in red. The red color have no meanings in current problem.
 
-![](./assets/map.jpg)
+![](../assets/map.jpg)
 
 **Graph data**
 
@@ -16,7 +16,6 @@ for i in range(7): _map[i] = chr(i+65); _map[chr(i+65)] = i
 towns = [chr(i) for i in range(65, 65+7)]
 edges = ['A B 4', 'A C 1', 'B C 2', 'B D 7', 'B E 6', 'C E 5',\
          'D G 1', 'E G 6', 'E F 2', 'A F 10', 'F D 9', 'F G 0']
-
 ```
 
 ### Floyed Warshall
@@ -37,9 +36,9 @@ dis[from][to] = min(
 
 That is, for each three distinct node, there are three paths need to be compaired, namely `O`, `D`, and `B`. For each pair of path (or abstract path) to iterate, actually we just need to consider the following question.
 
-![](./assets/map.jpg)
+![](../assets/map.jpg)
 
-> We go to **B** from **A**. Is the path `A --> B`  shorter or we finding a bridge node **C** and the path `A --> C --> B` shorter?
+> We go to **B** from **A**. Is the path `A --> B` shorter or we finding a bridge node **C** and the path `A --> C --> B` shorter?
 >
 > To make it abstract, for any node **F**, **T**: if there is a bridge node **V** can make the distance shorter, adopt it.
 >

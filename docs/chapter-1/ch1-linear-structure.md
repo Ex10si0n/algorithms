@@ -6,7 +6,7 @@ A Queue is a linear structure which follows a particular order in which the oper
 
 ![Types of Queue in Data structure | Queue Data structure Introduction and  Operations](https://i1.faceprep.in/Companies-1/queue-operations.gif)
 
-**Code to implement** [[src code]](./codes/data-structure/queue.py)
+**Code to implement** [\[src code\]](../codes/data-structure/queue.py)
 
 ```python
 class Queue:
@@ -28,7 +28,7 @@ Stack is a linear data structure which follows a particular order in which the o
 
 ![Stack Data Structure and Implementation in Python, Java and C/C++](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
 
-**Code to implement **[[src code]](./codes/data-structure/stack.py)
+\*\*Code to implement \*\*[\[src code\]](../codes/data-structure/stack.py)
 
 ```python
 class Stack:

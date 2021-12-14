@@ -30,7 +30,7 @@ Prim’s Algorithm use Greedy approach to find the minimum spanning tree. We sta
 
 ![](https://i.stack.imgur.com/TTwpR.png)
 
-**Code**: [[src code]](./codes/algorithms/prims.py)
+**Code**: [\[src code\]](../codes/algorithms/prims.py)
 
 ```python
 class Graph:
