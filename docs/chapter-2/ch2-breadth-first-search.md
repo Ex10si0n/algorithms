@@ -4,9 +4,9 @@ In the last section you have learned one of the Algorithms to solve the Shortest
 
 You may noticed that the name of **Breadth First Search** (abbr. BFS) is similar to the name of DFS. The implementation of the two algorithms is wholey different since DFS adopts **recursion** while BFS adopts methodology of **queue** (remember that it is a data structure introduced below?).
 
-A lively metaphor is that BFS is like flooding (or spread of epidemic) , you can check [this](https://www.youtube.com/watch?v=x-VTfcmrLEQ) Youtube video to see the algorithm animation. 
+A lively metaphor is that BFS is like flooding (or spread of epidemic) , you can check [this](https://www.youtube.com/watch?v=x-VTfcmrLEQ) Youtube video to see the algorithm animation.
 
-[![](./assets/bfs-anim.png)](https://www.youtube.com/watch?v=x-VTfcmrLEQ)
+[![](../assets/bfs-anim.png)](https://www.youtube.com/watch?v=x-VTfcmrLEQ)
 
 We can see that, for nodes in same depth, they are visited at the same time (actually, it have the order, but the node in next depth cannot be visited the same time as current depth).
 
@@ -25,14 +25,13 @@ while queue not empty:
             visit(next_node)
 ```
 
-`visit()` is the function to mark a node as visited
-`this_node.childrens` means the adjacent node to current node
+`visit()` is the function to mark a node as visited `this_node.childrens` means the adjacent node to current node
 
 ### Maze Problem II
 
 Adopting BFS in solving Maze Problem is another way of thinking. For the question, please refer to the previous [Maze Problem I](https://github.com/Ex10si0n/MPI-Interest-Group#maze-problem-i). Let us try to implement the maze solver by adopting BFS.
 
-Maze parser code here: (You are free to change the map pattern if you like using [maze.py](./codes/algorithms/maze.py))
+Maze parser code here: (You are free to change the map pattern if you like using [maze.py](../codes/algorithms/maze.py))
 
 ```python
 maze = '''#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.
@@ -174,9 +173,7 @@ You are also given three integers `sr`, `sc`, and `newColor`. You should perform
 
 To perform a **flood fill**, consider the starting pixel, plus any pixels connected **4-directionally** to the starting pixel of the same color as the starting pixel, plus any pixels connected **4-directionally** to those pixels (also with the same color), and so on. Replace the color of all of the aforementioned pixels with `newColor`.
 
-Return *the modified image after performing the flood fill*.
-
- 
+Return _the modified image after performing the flood fill_.
 
 **Example 1:**
 
@@ -196,16 +193,14 @@ Input: image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2
 Output: [[2,2,2],[2,2,2]]
 ```
 
- 
-
 **Constraints:**
 
-- `m == image.length`
-- `n == image[i].length`
-- `1 <= m, n <= 50`
-- `0 <= image[i][j], newColor < 216`
-- `0 <= sr < m`
-- `0 <= sc < n`
+* `m == image.length`
+* `n == image[i].length`
+* `1 <= m, n <= 50`
+* `0 <= image[i][j], newColor < 216`
+* `0 <= sr < m`
+* `0 <= sc < n`
 
 ```java
 class Solution {
@@ -240,11 +235,9 @@ Also, you cannot move to the cell that you visited in your last move. For exampl
 
 Return `true` if any cycle of the same value exists in `grid`, otherwise, return `false`.
 
- 
-
 **Example 1:**
 
-**![img](https://assets.leetcode.com/uploads/2020/07/15/1.png)**
+![img](https://assets.leetcode.com/uploads/2020/07/15/1.png)
 
 ```
 Input: grid = [["a","a","a","a"],["a","b","b","a"],["a","b","b","a"],["a","a","a","a"]]
@@ -254,7 +247,7 @@ Explanation: There are two valid cycles shown in different colors in the image b
 
 **Example 2:**
 
-**![img](https://assets.leetcode.com/uploads/2020/07/15/22.png)**
+![img](https://assets.leetcode.com/uploads/2020/07/15/22.png)
 
 ```
 Input: grid = [["c","c","c","a"],["c","d","c","c"],["c","c","e","c"],["f","c","c","c"]]
@@ -264,21 +257,19 @@ Explanation: There is only one valid cycle highlighted in the image below:
 
 **Example 3:**
 
-**![img](https://assets.leetcode.com/uploads/2020/07/15/3.png)**
+![img](https://assets.leetcode.com/uploads/2020/07/15/3.png)
 
 ```
 Input: grid = [["a","b","b"],["b","z","b"],["b","b","a"]]
 Output: false
 ```
 
- 
-
 **Constraints:**
 
-- `m == grid.length`
-- `n == grid[i].length`
-- `1 <= m, n <= 500`
-- `grid` consists only of lowercase English letters.
+* `m == grid.length`
+* `n == grid[i].length`
+* `1 <= m, n <= 500`
+* `grid` consists only of lowercase English letters.
 
 ```java
 class Solution {
@@ -315,4 +306,3 @@ class Solution {
     }
 }
 ```
-
