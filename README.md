@@ -4,7 +4,7 @@ description: Introduction
 
 # README
 
-## [MPI Algorithms Interest Group](https://github.com/Ex10si0n/Algorithms)
+## [MPI Algorithms Interest Group](algo.aspires.cc)
 
 ## Introduction
 
