@@ -6,6 +6,8 @@ description: Introduction
 
 ## [MPI Algorithms Interest Group](https://github.com/Ex10si0n/Algorithms)
 
+![](.gitbook/assets/what-is-an-algorithm-featured.png)
+
 ## Introduction
 
 Lecturer: Steve Yan [![](https://img.shields.io/badge/Web-aspires.cc-blue)](https://www.aspires.cc)
