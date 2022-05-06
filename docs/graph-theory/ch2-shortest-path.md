@@ -1,4 +1,4 @@
-# Shortest Path
+# Shortest Path I
 
 Here is the map of Ex10si0n island. He designed the arrangement of each town (namely A B C D E F G -town) with roads. When the tourist go through a certain path, he or she will pay for a number of coins. The cost of each road is the number inside each diamonds.
 
@@ -6,7 +6,7 @@ You are paying a visit to Ex10si0n island. Can you find the minimum cost for tra
 
 You may notice that A town is marked in red. The red color have no meanings in current problem.
 
-![](../../assets/map.jpg)
+![](../assets/map.jpg)
 
 **Graph data**
 
@@ -36,7 +36,7 @@ dis[from][to] = min(
 
 That is, for each three distinct node, there are three paths need to be compaired, namely `O`, `D`, and `B`. For each pair of path (or abstract path) to iterate, actually we just need to consider the following question.
 
-![](../../assets/map.jpg)
+![](../assets/map.jpg)
 
 > We go to **B** from **A**. Is the path `A --> B` shorter or we finding a bridge node **C** and the path `A --> C --> B` shorter?
 >
