@@ -5,6 +5,7 @@
 ## The C++ Programming Language
 
 * [GCC Compiler](the-c++-programming-language/gcc-compiler.md)
+* [Fundamental](the-c++-programming-language/fundamental.md)
 * [Integrated Environment](the-c++-programming-language/integrated-environment.md)
 * [STL Containers](the-c++-programming-language/stl-containers.md)
 
