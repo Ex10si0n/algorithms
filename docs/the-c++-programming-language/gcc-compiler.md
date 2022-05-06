@@ -13,11 +13,7 @@ g++ --version
 ![](https://media.geeksforgeeks.org/wp-content/uploads/version-1.jpg)
 
 * **Compile a CPP file to generate executable target file:** _g++ file\_name_ command is used to compile and create an executable file _a.out_ (default target name).\
-  **Example:** Given a simple program to print “Hello Geek” on standard output with file name _hello.cpp_\
-
-* CPP
-
-### CPP
+  **Example:** Given a simple program to print “Hello Geek” on standard output with file name _hello.cpp_
 
 ```cpp
 #include <iostream>
