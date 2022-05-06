@@ -22,7 +22,7 @@
 * [Minimum Spanning Tree](graph-theory/ch2-minimum-spanning-tree.md)
 * [Depth First Search](graph-theory/ch2-depth-first-search.md)
 * [Breadth First Search](graph-theory/ch2-breadth-first-search.md)
-* [Shortest Path I](graph-theory/ch2-shortest-path.md)
+* [Shortest Path](graph-theory/ch2-shortest-path.md)
 * [Network Flow](graph-theory/network-flow.md)
 * [Bipartite Graph](graph-theory/bipartite-graph.md)
 * [Topological Sort](graph-theory/topological-sort.md)
