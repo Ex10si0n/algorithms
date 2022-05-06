@@ -5,6 +5,7 @@
 ## The C++ Programming Language
 
 * [STL Containers](the-c++-programming-language/stl-containers.md)
+* [GCC Compiler](the-c++-programming-language/gcc-compiler.md)
 
 ## Fundamental Algorithms and Data Structures <a href="#fundamental" id="fundamental"></a>
 
@@ -21,3 +22,10 @@
 * [Depth First Search](graph-theory/ch2-depth-first-search.md)
 * [Breadth First Search](graph-theory/ch2-breadth-first-search.md)
 * [Shortest Path I](graph-theory/ch2-shortest-path.md)
+* [Network Flow](graph-theory/network-flow.md)
+* [Bipartite Graph](graph-theory/bipartite-graph.md)
+* [Topological Sort](graph-theory/topological-sort.md)
+
+## Dynamic Programming
+
+* [Basic Dynamic Programming](dynamic-programming/basic-dynamic-programming.md)
