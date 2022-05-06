@@ -10,7 +10,7 @@ Given `n` non-negative integers `a1, a2, ..., an` , where each represents a poin
 
 **Example 1:**
 
-![img](../assets/question\_11.jpg)
+![img](../../assets/question\_11.jpg)
 
 ```
 Input: height = [1,8,6,2,5,4,8,3,7]
@@ -26,7 +26,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 #### Sol.
 
-![Picture0.png](../assets/1628780627-VtSmcP-Picture0.png)
+![Picture0.png](../../assets/1628780627-VtSmcP-Picture0.png)
 
 * If in Brute Force (暴力枚举) way, we can encount `n * n` possibilities then calculate each area to get the max area.
 * Greedy Approach can optimize the complexity from $O(N^2)$ to $O(N)$
@@ -39,7 +39,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
   * Ref. https://leetcode-cn.com/problems/container-with-most-water/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do/
   * Status Transferring Tree
 
-![](../assets/LC11.State\_Tree.jpeg)
+![](../../assets/LC11.State\_Tree.jpeg)
 
 ```python
 class Solution:

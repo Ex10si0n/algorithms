@@ -6,7 +6,7 @@ You may noticed that the name of **Breadth First Search** (abbr. BFS) is similar
 
 A lively metaphor is that BFS is like flooding (or spread of epidemic) , you can check [this](https://www.youtube.com/watch?v=x-VTfcmrLEQ) Youtube video to see the algorithm animation.
 
-[![](../assets/bfs-anim.png)](https://www.youtube.com/watch?v=x-VTfcmrLEQ)
+[![](../../assets/bfs-anim.png)](https://www.youtube.com/watch?v=x-VTfcmrLEQ)
 
 We can see that, for nodes in same depth, they are visited at the same time (actually, it have the order, but the node in next depth cannot be visited the same time as current depth).
 

@@ -58,7 +58,7 @@ for i in range(n):
 
 An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an `G[]`. An entry `G[i]` represents the list of vertices adjacent to the i-th vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is the adjacency list representation. **It is not hard to change the adjacency matrix to list form if you really understand how it works.**
 
-![](../assets/adjacency-list.jpeg)
+![](../../assets/adjacency-list.jpeg)
 
 **Code to implement** [\[src code\]](../codes/data-structure/adjacency\_list.py)
 

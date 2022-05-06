@@ -82,7 +82,7 @@ Take a look at this example.
 
 Each Orange node maintains an interval sum of numbers. If we rotate it, we can have a better understanding.
 
-![](../assets/bit.png)
+![](../../assets/bit.png)
 
 For example, to get the interval sum(or any other data of an interval you defined) of `[0, 10]`. just add 2 values rather than 11 values. Try to find which 2 values are components to sum up.
 
@@ -101,4 +101,4 @@ A **simple solution** is to run a loop from l to r and calculate the sum of elem
 
 An array representation of a tree is used to represent Segment Trees. For each node at index i, the left child is at index `2 * i + 1`, the right child at `2 * i + 2` and the parent is at `⌊(i – 1) / 2⌋`(Note: `⌊expression⌋`notation means flooring).
 
-![](../assets/segment-tree.jpeg)
+![](../../assets/segment-tree.jpeg)

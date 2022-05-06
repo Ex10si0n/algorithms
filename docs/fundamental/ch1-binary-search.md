@@ -2,7 +2,7 @@
 
 Binary Search is an efficient algorithm for finding an item from a **sorted** set of items. Here is an example for finding `-1` from the given list.
 
-![](../assets/binary-search-example.png)
+![](../../assets/binary-search-example.png)
 
 As the figure shows, adopting binary search can lower the time complexity from $O(N)$ to $O(\log N)$ \[Note: When analysising Algorithms time and space complexity, $\log N$ stands for $log\_2 N$]
 
