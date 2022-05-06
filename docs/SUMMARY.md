@@ -4,8 +4,9 @@
 
 ## The C++ Programming Language
 
-* [STL Containers](the-c++-programming-language/stl-containers.md)
 * [GCC Compiler](the-c++-programming-language/gcc-compiler.md)
+* [Integrated Environment](the-c++-programming-language/integrated-environment.md)
+* [STL Containers](the-c++-programming-language/stl-containers.md)
 
 ## Fundamental Algorithms and Data Structures <a href="#fundamental" id="fundamental"></a>
 
