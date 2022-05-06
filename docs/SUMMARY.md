@@ -1,6 +1,10 @@
 # Table of contents
 
-* [Before We Start](README.md)
+* [The Algorithms Interest Group](README.md)
+
+## The C++ Programming Language
+
+* [STL Containers](the-c++-programming-language/stl-containers.md)
 
 ## Fundamental Algorithms and Data Structures <a href="#fundamental" id="fundamental"></a>
 
