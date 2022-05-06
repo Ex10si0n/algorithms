@@ -26,6 +26,7 @@
 * [Network Flow](graph-theory/network-flow.md)
 * [Bipartite Graph](graph-theory/bipartite-graph.md)
 * [Topological Sort](graph-theory/topological-sort.md)
+* [Automaton](graph-theory/automaton.md)
 
 ## Dynamic Programming
 
