@@ -16,10 +16,10 @@
 * [Recursion](fundamental/ch1-recursion.md)
 * [Linear Structure](fundamental/ch1-linear-structure.md)
 * [Generic Tree](fundamental/ch1-generic-tree.md)
-* [Generic Graph](fundamental/ch1-generic-graph.md)
 
 ## Graph Theory
 
+* [Generic Graph](graph-theory/ch1-generic-graph.md)
 * [Minimum Spanning Tree](graph-theory/ch2-minimum-spanning-tree.md)
 * [Depth First Search](graph-theory/ch2-depth-first-search.md)
 * [Breadth First Search](graph-theory/ch2-breadth-first-search.md)
