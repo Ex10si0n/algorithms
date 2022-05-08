@@ -17,8 +17,7 @@ g++ --version
 
 ```cpp
 #include <iostream>
-int main()
-{
+int main() {
     std::cout << "Hello Geek\n"``;
     return 0;
 }
@@ -74,8 +73,7 @@ g++ -o main.exe hello.cpp
 // hello.cpp
 #include "helloWorld.h"
 #include <iostream>
-int main()
-{
+int main() {
     std::cout << "Hello Geek\n"``;
     helloWorld();
     return 0;
@@ -85,8 +83,7 @@ int main()
 ```cpp
 // helloWorld.cpp
 #include <iostream>
-void helloWorld()
-{
+void helloWorld() {
     std::cout << "Hello World\n"``;
 }
 ```
