@@ -12,6 +12,7 @@
 ## Fundamental Algorithms and Data Structures <a href="#fundamental" id="fundamental"></a>
 
 * [Greedy](fundamental/ch1-greedy.md)
+* [Greedy (2022)](fundamental/greedy-2022.md)
 * [Binary Search](fundamental/ch1-binary-search.md)
 * [Recursion](fundamental/ch1-recursion.md)
 * [Linear Structure](fundamental/ch1-linear-structure.md)
