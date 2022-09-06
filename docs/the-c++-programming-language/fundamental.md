@@ -13,6 +13,12 @@ int main() {                // define main function
 }
 ```
 
+Run it with:
+
+```bash
+g++ -o hello hello.cpp
+```
+
 Here is the Java code as a comparison:
 
 ```java
